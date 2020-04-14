@@ -1,5 +1,5 @@
 # Impersonator
-PyTorch implementation of our ICCV 2019 paper:
+PyTorch implementation of an ICCV 2019 paper:
 
 Liquid Warping GAN: A Unified Framework for Human Motion Imitation, Appearance Transfer and Novel View Synthesis
 
