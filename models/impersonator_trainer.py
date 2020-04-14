@@ -1,6 +1,7 @@
 import os
 import torch
 import torch.nn.functional as F
+from torch.autograd import Variable
 from collections import OrderedDict
 import utils.util as util
 from .models import BaseModel
@@ -222,6 +223,7 @@ class Impersonator(BaseModel):
                                            norm_type=self._opt.norm_type, ndf=64, n_layers=4, use_sigmoid=False)
 
     def _init_train_vars(self):
+        print("---------- Generator LR:{0} ---------- DISCRIMINATOR LR:{1} ----------".format(self._opt.lr_G, self._opt.lr_D))
         self._current_lr_G = self._opt.lr_G
         self._current_lr_D = self._opt.lr_D
 
@@ -361,7 +363,7 @@ class Impersonator(BaseModel):
             if trainable:
                 loss_D = self._optimize_D(fake_tsf_imgs)
                 self._optimizer_D.zero_grad()
-                loss_D.backward()
+                loss_D.backward(retain_graph=True)
                 self._optimizer_D.step()
 
     def _optimize_G(self, fake_bg, fake_src_imgs, fake_tsf_imgs, fake_masks):
@@ -407,8 +409,23 @@ class Impersonator(BaseModel):
         self._d_real = torch.mean(d_real_outs)
         self._d_fake = torch.mean(d_fake_outs)
 
+        # Gradient Penalty - Puneet
+        gp_weight = 2
+        if self._opt.gradient_penalty:
+            alpha = torch.rand(real_input_D.shape[0], 1, 1, 1)
+            alpha = alpha.expand_as(real_input_D).cuda()
+            interp_images = Variable(alpha * real_input_D.data + (1 - alpha) * fake_input_D.data, requires_grad=True).cuda()
+            d_interp_outs = self._D.forward(interp_images)
+            gradients = torch.autograd.grad(outputs=d_interp_outs, inputs=interp_images,
+                                                    grad_outputs=torch.ones(d_interp_outs.size()).cuda(),
+                                                    create_graph=True, retain_graph=True)[0]
+            gradients = gradients.view(real_input_D.shape[0], -1)
+            gradients_norm = torch.sqrt(torch.sum(gradients ** 2, dim=1) + 1e-12)
+            gp = gp_weight * gradients_norm.mean()
+        else:
+            gp = 0
         # combine losses
-        return _loss_d_real + _loss_d_fake
+        return _loss_d_real + _loss_d_fake + gp
 
     def _compute_loss_D(self, x, y):
         return torch.mean((x - y) ** 2)

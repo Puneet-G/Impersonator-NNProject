@@ -14,7 +14,7 @@ class TrainOptions(BaseOptions):
         self._parser.add_argument('--fashion_bs', type=int, default=4, help='input batch size of fashion dataset')
 
         self._parser.add_argument('--intervals', type=int, default=10, help='the interval between frames.')
-        self._parser.add_argument('--n_threads_train', default=4, type=int, help='# threads for loading data')
+        self._parser.add_argument('--n_threads_train', default=6, type=int, help='# threads for loading data')
         self._parser.add_argument('--num_iters_validate', default=1, type=int, help='# batches to use when validating')
         self._parser.add_argument('--print_freq_s', type=int, default=60, help='frequency of showing training results on console')
         self._parser.add_argument('--display_freq_s', type=int, default=300, help='frequency [s] of showing training results on screen')
@@ -43,5 +43,5 @@ class TrainOptions(BaseOptions):
         self._parser.add_argument('--lambda_face', type=float, default=1, help='lambda face loss')
         self._parser.add_argument('--lambda_mask', type=float, default=0.1, help='lambda mask loss')
         self._parser.add_argument('--lambda_mask_smooth', type=float, default=1e-5, help='lambda mask smooth loss')
-
+        self._parser.add_argument('--gradient_penalty', action='store_true', help='whether to use gradient penalty or not')
         self.is_train = True

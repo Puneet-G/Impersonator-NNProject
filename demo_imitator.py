@@ -69,7 +69,14 @@ def generate_actor_result(test_opt, src_img_path):
 
             imitator.inference_by_smpls(tgt_smpls, cam_strategy='smooth', output_dir=pred_output_dir, visualizer=None)
 
-            save_dir = os.path.join(test_opt.output_dir, src_img_name, action_type)
+
+            #Ronak's parsing content. Renaming output dir based on current epoch.
+            load_path = test_opt.load_path
+	    load_path_split = epoch.split("_")
+	    idx_of_epoch = load_path_split.index("epoch")
+	    output = epoch_split[idx_of_epoch] + epoch_split[idx_of_epoch+1]
+
+            save_dir = os.path.join(test_opt.output_dir, src_img_name, output, action_type)
             mkdir(save_dir)
 
             output_mp4_path = os.path.join(save_dir, 'mixamo_%.4d_%s.mp4' % (i, src_img_name))
@@ -94,7 +101,7 @@ def main():
 
     test_opt.output_dir = mkdir('./outputs/results/demos/imitators')
     # source images from iPER
-    images_paths = ['./assets/src_imgs/imper_A_Pose/009_5_1_000.jpg',
+    images_paths = ['./assets/src_imgs/david_beckham_blue_tie_standee-resized.jpg',
                     './assets/src_imgs/imper_A_Pose/024_8_2_0000.jpg',
                     './assets/src_imgs/fashion_woman/Sweaters-id_0000088807_4_full.jpg']
 

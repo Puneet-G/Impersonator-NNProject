@@ -1,20 +1,20 @@
 #! /bin/bash
 
 # basic configs
-#gpu_ids=0,1     # if using multi-gpus, increasing the batch_size
-gpu_ids=0
+gpu_ids=0,1     # if using multi-gpus, increasing the batch_size
+#gpu_ids=0
 
 # dataset configs
 dataset_model=iPER  # use iPER dataset
-data_dir=/p300/iccv/iPER_examples  # need to be replaced!!!!!
+data_dir=/home/ronak1997_gmail_com/impersonator/train_data  # need to be replaced!!!!!
 images_folder=images
 smpls_folder=smpls
 train_ids_file=train.txt
 test_ids_file=val.txt
 
 # saving configs
-checkpoints_dir=/p300/iccv/ckpts_models   # directory to save models, need to be replaced!!!!!
-name=exp_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
+checkpoints_dir=/home/ronak1997_gmail_com/impersonator/trained_models   # directory to save models, need to be replaced!!!!!
+name=exp_gp2_ReLU_g1-4_d3-4_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
 
 # model configs
 model=impersonator_trainer
@@ -23,7 +23,7 @@ image_size=256
 
 # training configs
 load_path="None"
-batch_size=4
+batch_size=24
 lambda_rec=10.0
 lambda_tsf=10.0
 lambda_face=5.0
@@ -33,6 +33,8 @@ lambda_mask=1.0
 lambda_mask_smooth=1.0
 nepochs_no_decay=5  # fixing learning rate when epoch ranges in [0, 5]
 nepochs_decay=25    # decreasing the learning rate when epoch ranges in [6, 25+5]
+lr_G=0.0001
+lr_D=0.0003
 
 python train.py --gpu_ids ${gpu_ids}        \
     --data_dir  ${data_dir}                 \
@@ -54,5 +56,8 @@ python train.py --gpu_ids ${gpu_ids}        \
     --lambda_rec       ${lambda_rec}         \
     --lambda_mask      ${lambda_mask}       \
     --lambda_mask_smooth  ${lambda_mask_smooth} \
+    --lr_G             ${lr_G}              \
+    --lr_D             ${lr_D}              \
     --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
-    --mask_bce     --use_vgg       --use_face
+    --mask_bce     --use_vgg       --use_face       --gradient_penalty
+

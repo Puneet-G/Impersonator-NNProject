@@ -13,3 +13,9 @@ outputs/checkpoints
 thirdparty/neural_renderer/files.txt
 piao_scripts
 doc/bug_list.md
+trained_models/*
+train_data/*
+assets/*
+plots/*
+outputs/*
+train_output.log

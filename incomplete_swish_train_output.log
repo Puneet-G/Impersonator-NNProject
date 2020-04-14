@@ -1,0 +1,1962 @@
+------------ Options -------------
+D_adam_b1: 0.5
+D_adam_b2: 0.999
+G_adam_b1: 0.5
+G_adam_b2: 0.999
+batch_size: 12
+bg_both: False
+bg_replace: False
+checkpoints_dir: /home/ronak1997_gmail_com/impersonator/trained_models
+cond_nc: 3
+data_dir: /home/ronak1997_gmail_com/impersonator/train_data
+dataset_mode: iPER
+debug: False
+display_freq_s: 300
+do_saturate_mask: False
+face_model: assets/pretrains/sphere20a_20171020.pth
+fashion_bs: 4
+fashion_dir: /public/deep_fashion/intrinsic
+final_lr: 2e-06
+gen_name: impersonator
+gpu_ids: 0
+hmr_model: assets/pretrains/hmr_tf2pt.pth
+image_size: 256
+images_folder: images
+intervals: 10
+is_train: True
+lambda_D_prob: 1
+lambda_face: 5.0
+lambda_mask: 1.0
+lambda_mask_smooth: 1.0
+lambda_rec: 10.0
+lambda_style: 0.0
+lambda_tsf: 10.0
+load_epoch: 0
+load_path: None
+lr_D: 0.0002
+lr_G: 0.0002
+map_name: uv_seg
+mask_bce: True
+model: impersonator_trainer
+n_threads_test: 2
+n_threads_train: 6
+name: exp_iPER
+nepochs_decay: 25
+nepochs_no_decay: 5
+norm_type: instance
+num_iters_validate: 1
+part_info: assets/pretrains/smpl_part_info.json
+place_bs: 4
+place_dir: /p300/places365_standard
+print_freq_s: 60
+repeat_num: 6
+save_latest_freq_s: 3600
+serial_batches: False
+smpl_model: assets/pretrains/smpl_model.pkl
+smpls_folder: smpls
+test_ids_file: val.txt
+tex_size: 3
+time_step: 10
+train_G_every_n_iterations: 1
+train_ids_file: train.txt
+use_face: True
+use_style: False
+use_vgg: True
+uv_mapping: assets/pretrains/mapper.txt
+-------------- End ----------------
+/home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER
+loading video = 006/1/1, 0 / 164
+loading video = 006/1/2, 1 / 164
+loading video = 001/5/1, 2 / 164
+loading video = 001/5/2, 3 / 164
+loading video = 001/6/1, 4 / 164
+loading video = 001/6/2, 5 / 164
+loading video = 001/29/1, 6 / 164
+loading video = 001/29/2, 7 / 164
+loading video = 001/21/1, 8 / 164
+loading video = 001/21/2, 9 / 164
+loading video = 009/7/1, 10 / 164
+loading video = 009/7/2, 11 / 164
+loading video = 019/1/1, 12 / 164
+loading video = 019/1/2, 13 / 164
+loading video = 028/1/1, 14 / 164
+loading video = 028/1/2, 15 / 164
+loading video = 015/3/1, 16 / 164
+loading video = 015/3/2, 17 / 164
+loading video = 018/1/1, 18 / 164
+loading video = 018/1/2, 19 / 164
+loading video = 001/16/1, 20 / 164
+loading video = 001/16/2, 21 / 164
+loading video = 019/3/1, 22 / 164
+loading video = 019/3/2, 23 / 164
+loading video = 024/2/1, 24 / 164
+loading video = 024/2/2, 25 / 164
+loading video = 021/1/1, 26 / 164
+loading video = 021/1/2, 27 / 164
+loading video = 004/2/1, 28 / 164
+loading video = 004/2/2, 29 / 164
+loading video = 015/2/1, 30 / 164
+loading video = 015/2/2, 31 / 164
+loading video = 001/4/1, 32 / 164
+loading video = 001/4/2, 33 / 164
+loading video = 001/14/1, 34 / 164
+loading video = 001/14/2, 35 / 164
+loading video = 012/1/1, 36 / 164
+loading video = 012/1/2, 37 / 164
+loading video = 001/2/1, 38 / 164
+loading video = 001/2/2, 39 / 164
+loading video = 009/4/1, 40 / 164
+loading video = 009/4/2, 41 / 164
+loading video = 001/32/1, 42 / 164
+loading video = 001/32/2, 43 / 164
+loading video = 014/1/1, 44 / 164
+loading video = 014/1/2, 45 / 164
+loading video = 005/1/1, 46 / 164
+loading video = 005/1/2, 47 / 164
+loading video = 026/3/1, 48 / 164
+loading video = 026/3/2, 49 / 164
+loading video = 016/1/1, 50 / 164
+loading video = 016/1/2, 51 / 164
+loading video = 009/6/1, 52 / 164
+loading video = 009/6/2, 53 / 164
+loading video = 009/8/1, 54 / 164
+loading video = 009/8/2, 55 / 164
+loading video = 001/20/1, 56 / 164
+loading video = 001/20/2, 57 / 164
+loading video = 001/7/1, 58 / 164
+loading video = 001/7/2, 59 / 164
+loading video = 008/3/1, 60 / 164
+loading video = 008/3/2, 61 / 164
+loading video = 001/28/1, 62 / 164
+loading video = 001/28/2, 63 / 164
+loading video = 023/1/1, 64 / 164
+loading video = 023/1/2, 65 / 164
+loading video = 022/1/1, 66 / 164
+loading video = 022/1/2, 67 / 164
+loading video = 007/3/1, 68 / 164
+loading video = 007/3/2, 69 / 164
+loading video = 024/1/1, 70 / 164
+loading video = 024/1/2, 71 / 164
+loading video = 001/17/1, 72 / 164
+loading video = 001/17/2, 73 / 164
+loading video = 024/6/1, 74 / 164
+loading video = 024/6/2, 75 / 164
+loading video = 009/1/1, 76 / 164
+loading video = 009/1/2, 77 / 164
+loading video = 024/5/1, 78 / 164
+loading video = 024/5/2, 79 / 164
+loading video = 001/24/1, 80 / 164
+loading video = 001/24/2, 81 / 164
+loading video = 003/1/1, 82 / 164
+loading video = 003/1/2, 83 / 164
+loading video = 026/2/1, 84 / 164
+loading video = 026/2/2, 85 / 164
+loading video = 009/3/1, 86 / 164
+loading video = 009/3/2, 87 / 164
+loading video = 012/3/1, 88 / 164
+loading video = 012/3/2, 89 / 164
+loading video = 013/1/1, 90 / 164
+loading video = 013/1/2, 91 / 164
+loading video = 001/33/1, 92 / 164
+loading video = 001/33/2, 93 / 164
+loading video = 001/12/1, 94 / 164
+loading video = 001/12/2, 95 / 164
+loading video = 001/1/1, 96 / 164
+loading video = 001/1/2, 97 / 164
+loading video = 001/10/1, 98 / 164
+loading video = 001/10/2, 99 / 164
+loading video = 001/15/1, 100 / 164
+loading video = 001/15/2, 101 / 164
+loading video = 025/2/1, 102 / 164
+loading video = 025/2/2, 103 / 164
+loading video = 007/2/1, 104 / 164
+loading video = 007/2/2, 105 / 164
+loading video = 012/4/1, 106 / 164
+loading video = 012/4/2, 107 / 164
+loading video = 028/2/1, 108 / 164
+loading video = 028/2/2, 109 / 164
+loading video = 027/2/1, 110 / 164
+loading video = 027/2/2, 111 / 164
+loading video = 001/30/1, 112 / 164
+loading video = 001/30/2, 113 / 164
+loading video = 009/2/1, 114 / 164
+loading video = 009/2/2, 115 / 164
+loading video = 020/1/1, 116 / 164
+loading video = 020/1/2, 117 / 164
+loading video = 002/1/1, 118 / 164
+loading video = 002/1/2, 119 / 164
+loading video = 023/2/1, 120 / 164
+loading video = 023/2/2, 121 / 164
+loading video = 026/4/1, 122 / 164
+loading video = 026/4/2, 123 / 164
+loading video = 001/25/1, 124 / 164
+loading video = 001/25/2, 125 / 164
+loading video = 024/3/1, 126 / 164
+loading video = 024/3/2, 127 / 164
+loading video = 001/22/1, 128 / 164
+loading video = 001/22/2, 129 / 164
+loading video = 027/3/1, 130 / 164
+loading video = 027/3/2, 131 / 164
+loading video = 024/9/1, 132 / 164
+loading video = 024/9/2, 133 / 164
+loading video = 025/3/1, 134 / 164
+loading video = 025/3/2, 135 / 164
+loading video = 001/8/1, 136 / 164
+loading video = 001/8/2, 137 / 164
+loading video = 008/1/1, 138 / 164
+loading video = 008/1/2, 139 / 164
+loading video = 022/2/1, 140 / 164
+loading video = 022/2/2, 141 / 164
+loading video = 015/1/1, 142 / 164
+loading video = 015/1/2, 143 / 164
+loading video = 001/26/1, 144 / 164
+loading video = 001/26/2, 145 / 164
+loading video = 006/2/1, 146 / 164
+loading video = 006/2/2, 147 / 164
+loading video = 027/1/1, 148 / 164
+loading video = 027/1/2, 149 / 164
+loading video = 001/27/1, 150 / 164
+loading video = 001/27/2, 151 / 164
+loading video = 001/3/1, 152 / 164
+loading video = 001/3/2, 153 / 164
+loading video = 001/23/1, 154 / 164
+loading video = 001/23/2, 155 / 164
+loading video = 001/13/1, 156 / 164
+loading video = 001/13/2, 157 / 164
+loading video = 030/1/1, 158 / 164
+loading video = 030/1/2, 159 / 164
+loading video = 024/4/1, 160 / 164
+loading video = 024/4/2, 161 / 164
+loading video = 008/2/1, 162 / 164
+loading video = 008/2/2, 163 / 164
+Dataset ImPerDataset was created
+loading video = 019/2/1, 0 / 42
+loading video = 019/2/2, 1 / 42
+loading video = 017/1/1, 2 / 42
+loading video = 017/1/2, 3 / 42
+loading video = 024/8/1, 4 / 42
+loading video = 024/8/2, 5 / 42
+loading video = 026/1/1, 6 / 42
+loading video = 026/1/2, 7 / 42
+loading video = 001/11/1, 8 / 42
+loading video = 001/11/2, 9 / 42
+loading video = 010/3/1, 10 / 42
+loading video = 010/3/2, 11 / 42
+loading video = 010/2/1, 12 / 42
+loading video = 010/2/2, 13 / 42
+loading video = 025/1/1, 14 / 42
+loading video = 025/1/2, 15 / 42
+loading video = 001/31/1, 16 / 42
+loading video = 001/31/2, 17 / 42
+loading video = 007/1/1, 18 / 42
+loading video = 007/1/2, 19 / 42
+loading video = 029/1/1, 20 / 42
+loading video = 029/1/2, 21 / 42
+loading video = 023/3/1, 22 / 42
+loading video = 023/3/2, 23 / 42
+loading video = 001/18/1, 24 / 42
+loading video = 001/18/2, 25 / 42
+loading video = 001/9/1, 26 / 42
+loading video = 001/9/2, 27 / 42
+loading video = 012/2/1, 28 / 42
+loading video = 012/2/2, 29 / 42
+loading video = 011/1/1, 30 / 42
+loading video = 011/1/2, 31 / 42
+loading video = 024/7/1, 32 / 42
+loading video = 024/7/2, 33 / 42
+loading video = 009/5/1, 34 / 42
+loading video = 009/5/2, 35 / 42
+loading video = 010/1/1, 36 / 42
+loading video = 010/1/2, 37 / 42
+loading video = 001/19/1, 38 / 42
+loading video = 001/19/2, 39 / 42
+loading video = 004/1/1, 40 / 42
+loading video = 004/1/2, 41 / 42
+Dataset ImPerDataset was created
+#train video clips = 18988
+#test video clips = 5074
+background generator
+init:  resnet_generator
+Network impersonator was created
+Network discriminator_patch_gan was created
+loading vgg19 ...
+load face model from assets/pretrains/sphere20a_20171020.pth
+Model Impersonator was created
+[10/04/2020 01:13:27] (Tv, epoch: 1, it: 0/1582, t/smpl: 0.174s)
+	g_rec:7.116
+	g_tsf:8.987
+	g_style:0.000
+	g_face:5.681
+	g_adv:1.587
+	g_mask:0.719
+	g_mask_smooth:0.145
+	d_real:0.011
+	d_fake:0.156
+
+[10/04/2020 01:13:30] (V, epoch: 1, time_to_val: 1s)
+	g_rec:7.116
+	g_tsf:8.987
+	g_style:0.000
+	g_face:5.681
+	g_adv:1.587
+	g_mask:0.719
+	g_mask_smooth:0.145
+	d_real:0.011
+	d_fake:0.156
+
+saving the latest model (epoch 1, total_steps 12)
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_1_id_G.pth
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_1_id_D.pth
+[10/04/2020 01:14:30] (T, epoch: 1, it: 30/1582, t/smpl: 0.168s)
+	g_rec:1.119
+	g_tsf:6.194
+	g_style:0.000
+	g_face:3.315
+	g_adv:0.309
+	g_mask:0.707
+	g_mask_smooth:0.062
+	d_real:0.662
+	d_fake:-0.294
+
+[10/04/2020 01:15:32] (T, epoch: 1, it: 63/1582, t/smpl: 0.168s)
+	g_rec:0.965
+	g_tsf:5.617
+	g_style:0.000
+	g_face:2.612
+	g_adv:0.715
+	g_mask:0.453
+	g_mask_smooth:0.055
+	d_real:0.903
+	d_fake:-0.134
+
+[10/04/2020 01:16:35] (T, epoch: 1, it: 96/1582, t/smpl: 0.168s)
+	g_rec:0.780
+	g_tsf:4.599
+	g_style:0.000
+	g_face:2.404
+	g_adv:0.373
+	g_mask:0.480
+	g_mask_smooth:0.040
+	d_real:0.501
+	d_fake:-0.485
+
+[10/04/2020 01:17:38] (T, epoch: 1, it: 129/1582, t/smpl: 0.168s)
+	g_rec:0.994
+	g_tsf:4.874
+	g_style:0.000
+	g_face:2.523
+	g_adv:0.150
+	g_mask:0.439
+	g_mask_smooth:0.034
+	d_real:0.491
+	d_fake:-0.159
+
+[10/04/2020 01:18:33] (Tv, epoch: 1, it: 158/1582, t/smpl: 0.169s)
+	g_rec:0.800
+	g_tsf:4.432
+	g_style:0.000
+	g_face:2.355
+	g_adv:1.205
+	g_mask:0.401
+	g_mask_smooth:0.030
+	d_real:-0.447
+	d_fake:-1.035
+
+[10/04/2020 01:18:36] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.800
+	g_tsf:4.432
+	g_style:0.000
+	g_face:2.355
+	g_adv:1.205
+	g_mask:0.401
+	g_mask_smooth:0.030
+	d_real:-0.447
+	d_fake:-1.035
+
+[10/04/2020 01:19:36] (T, epoch: 1, it: 189/1582, t/smpl: 0.168s)
+	g_rec:0.708
+	g_tsf:4.438
+	g_style:0.000
+	g_face:2.430
+	g_adv:0.168
+	g_mask:0.438
+	g_mask_smooth:0.027
+	d_real:0.530
+	d_fake:0.209
+
+[10/04/2020 01:20:39] (T, epoch: 1, it: 222/1582, t/smpl: 0.168s)
+	g_rec:0.759
+	g_tsf:4.160
+	g_style:0.000
+	g_face:2.281
+	g_adv:0.403
+	g_mask:0.409
+	g_mask_smooth:0.028
+	d_real:0.124
+	d_fake:-0.528
+
+[10/04/2020 01:21:41] (T, epoch: 1, it: 255/1582, t/smpl: 0.168s)
+	g_rec:0.984
+	g_tsf:4.302
+	g_style:0.000
+	g_face:2.140
+	g_adv:0.282
+	g_mask:0.348
+	g_mask_smooth:0.027
+	d_real:0.847
+	d_fake:0.264
+
+[10/04/2020 01:22:44] (T, epoch: 1, it: 288/1582, t/smpl: 0.167s)
+	g_rec:0.656
+	g_tsf:3.794
+	g_style:0.000
+	g_face:2.243
+	g_adv:0.135
+	g_mask:0.326
+	g_mask_smooth:0.027
+	d_real:0.329
+	d_fake:-0.256
+
+[10/04/2020 01:23:39] (Tv, epoch: 1, it: 317/1582, t/smpl: 0.169s)
+	g_rec:0.528
+	g_tsf:3.616
+	g_style:0.000
+	g_face:2.257
+	g_adv:0.796
+	g_mask:0.318
+	g_mask_smooth:0.026
+	d_real:-0.103
+	d_fake:-0.781
+
+[10/04/2020 01:23:42] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.528
+	g_tsf:3.616
+	g_style:0.000
+	g_face:2.257
+	g_adv:0.796
+	g_mask:0.318
+	g_mask_smooth:0.026
+	d_real:-0.103
+	d_fake:-0.781
+
+[10/04/2020 01:24:42] (T, epoch: 1, it: 348/1582, t/smpl: 0.168s)
+	g_rec:0.540
+	g_tsf:3.494
+	g_style:0.000
+	g_face:1.910
+	g_adv:0.210
+	g_mask:0.268
+	g_mask_smooth:0.026
+	d_real:0.256
+	d_fake:-0.296
+
+[10/04/2020 01:25:45] (T, epoch: 1, it: 381/1582, t/smpl: 0.168s)
+	g_rec:0.621
+	g_tsf:4.000
+	g_style:0.000
+	g_face:2.184
+	g_adv:0.180
+	g_mask:0.237
+	g_mask_smooth:0.025
+	d_real:0.567
+	d_fake:-0.172
+
+[10/04/2020 01:26:48] (T, epoch: 1, it: 414/1582, t/smpl: 0.168s)
+	g_rec:0.538
+	g_tsf:3.884
+	g_style:0.000
+	g_face:2.170
+	g_adv:0.149
+	g_mask:0.212
+	g_mask_smooth:0.024
+	d_real:0.193
+	d_fake:-0.197
+
+[10/04/2020 01:27:50] (T, epoch: 1, it: 447/1582, t/smpl: 0.168s)
+	g_rec:0.721
+	g_tsf:3.866
+	g_style:0.000
+	g_face:2.062
+	g_adv:0.500
+	g_mask:0.194
+	g_mask_smooth:0.024
+	d_real:0.679
+	d_fake:0.374
+
+[10/04/2020 01:28:46] (Tv, epoch: 1, it: 476/1582, t/smpl: 0.169s)
+	g_rec:0.663
+	g_tsf:3.922
+	g_style:0.000
+	g_face:2.284
+	g_adv:0.132
+	g_mask:0.187
+	g_mask_smooth:0.024
+	d_real:0.326
+	d_fake:-0.132
+
+[10/04/2020 01:28:48] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.663
+	g_tsf:3.922
+	g_style:0.000
+	g_face:2.284
+	g_adv:0.132
+	g_mask:0.187
+	g_mask_smooth:0.024
+	d_real:0.326
+	d_fake:-0.132
+
+[10/04/2020 01:29:48] (T, epoch: 1, it: 507/1582, t/smpl: 0.168s)
+	g_rec:0.620
+	g_tsf:3.761
+	g_style:0.000
+	g_face:2.047
+	g_adv:0.429
+	g_mask:0.164
+	g_mask_smooth:0.023
+	d_real:0.294
+	d_fake:-0.488
+
+[10/04/2020 01:30:51] (T, epoch: 1, it: 540/1582, t/smpl: 0.168s)
+	g_rec:0.873
+	g_tsf:4.337
+	g_style:0.000
+	g_face:2.223
+	g_adv:0.313
+	g_mask:0.166
+	g_mask_smooth:0.023
+	d_real:0.687
+	d_fake:0.051
+
+[10/04/2020 01:31:54] (T, epoch: 1, it: 573/1582, t/smpl: 0.168s)
+	g_rec:0.678
+	g_tsf:3.741
+	g_style:0.000
+	g_face:2.235
+	g_adv:0.394
+	g_mask:0.154
+	g_mask_smooth:0.022
+	d_real:0.610
+	d_fake:0.113
+
+[10/04/2020 01:32:57] (T, epoch: 1, it: 606/1582, t/smpl: 0.168s)
+	g_rec:0.479
+	g_tsf:3.183
+	g_style:0.000
+	g_face:2.109
+	g_adv:0.163
+	g_mask:0.135
+	g_mask_smooth:0.021
+	d_real:0.479
+	d_fake:-0.327
+
+[10/04/2020 01:33:52] (Tv, epoch: 1, it: 635/1582, t/smpl: 0.169s)
+	g_rec:0.515
+	g_tsf:3.301
+	g_style:0.000
+	g_face:1.962
+	g_adv:0.129
+	g_mask:0.136
+	g_mask_smooth:0.022
+	d_real:0.126
+	d_fake:-0.184
+
+[10/04/2020 01:33:54] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.515
+	g_tsf:3.301
+	g_style:0.000
+	g_face:1.962
+	g_adv:0.129
+	g_mask:0.136
+	g_mask_smooth:0.022
+	d_real:0.126
+	d_fake:-0.184
+
+[10/04/2020 01:34:55] (T, epoch: 1, it: 666/1582, t/smpl: 0.168s)
+	g_rec:0.563
+	g_tsf:3.265
+	g_style:0.000
+	g_face:2.165
+	g_adv:0.358
+	g_mask:0.134
+	g_mask_smooth:0.022
+	d_real:0.838
+	d_fake:0.533
+
+[10/04/2020 01:35:57] (T, epoch: 1, it: 699/1582, t/smpl: 0.168s)
+	g_rec:0.521
+	g_tsf:3.327
+	g_style:0.000
+	g_face:2.147
+	g_adv:0.183
+	g_mask:0.117
+	g_mask_smooth:0.021
+	d_real:0.502
+	d_fake:-0.355
+
+[10/04/2020 01:37:00] (T, epoch: 1, it: 732/1582, t/smpl: 0.168s)
+	g_rec:0.535
+	g_tsf:3.478
+	g_style:0.000
+	g_face:2.086
+	g_adv:0.626
+	g_mask:0.127
+	g_mask_smooth:0.022
+	d_real:-0.102
+	d_fake:-0.762
+
+[10/04/2020 01:38:03] (T, epoch: 1, it: 765/1582, t/smpl: 0.168s)
+	g_rec:0.444
+	g_tsf:3.208
+	g_style:0.000
+	g_face:2.030
+	g_adv:0.102
+	g_mask:0.117
+	g_mask_smooth:0.022
+	d_real:0.404
+	d_fake:-0.128
+
+[10/04/2020 01:38:58] (Tv, epoch: 1, it: 794/1582, t/smpl: 0.169s)
+	g_rec:0.394
+	g_tsf:3.169
+	g_style:0.000
+	g_face:1.980
+	g_adv:0.339
+	g_mask:0.116
+	g_mask_smooth:0.021
+	d_real:0.036
+	d_fake:-0.510
+
+[10/04/2020 01:39:01] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.394
+	g_tsf:3.169
+	g_style:0.000
+	g_face:1.980
+	g_adv:0.339
+	g_mask:0.116
+	g_mask_smooth:0.021
+	d_real:0.036
+	d_fake:-0.510
+
+[10/04/2020 01:40:01] (T, epoch: 1, it: 825/1582, t/smpl: 0.168s)
+	g_rec:0.430
+	g_tsf:3.154
+	g_style:0.000
+	g_face:2.035
+	g_adv:0.052
+	g_mask:0.095
+	g_mask_smooth:0.021
+	d_real:0.084
+	d_fake:-0.156
+
+[10/04/2020 01:41:04] (T, epoch: 1, it: 858/1582, t/smpl: 0.168s)
+	g_rec:0.709
+	g_tsf:3.191
+	g_style:0.000
+	g_face:1.966
+	g_adv:0.129
+	g_mask:0.105
+	g_mask_smooth:0.020
+	d_real:0.268
+	d_fake:-0.286
+
+[10/04/2020 01:42:06] (T, epoch: 1, it: 891/1582, t/smpl: 0.168s)
+	g_rec:0.464
+	g_tsf:3.441
+	g_style:0.000
+	g_face:1.880
+	g_adv:0.134
+	g_mask:0.107
+	g_mask_smooth:0.020
+	d_real:0.363
+	d_fake:-0.107
+
+[10/04/2020 01:43:09] (T, epoch: 1, it: 924/1582, t/smpl: 0.168s)
+	g_rec:0.361
+	g_tsf:3.024
+	g_style:0.000
+	g_face:2.056
+	g_adv:0.425
+	g_mask:0.096
+	g_mask_smooth:0.020
+	d_real:-0.120
+	d_fake:-0.592
+
+[10/04/2020 01:44:04] (Tv, epoch: 1, it: 953/1582, t/smpl: 0.169s)
+	g_rec:0.394
+	g_tsf:3.053
+	g_style:0.000
+	g_face:1.921
+	g_adv:0.332
+	g_mask:0.091
+	g_mask_smooth:0.020
+	d_real:0.632
+	d_fake:0.157
+
+[10/04/2020 01:44:07] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.394
+	g_tsf:3.053
+	g_style:0.000
+	g_face:1.921
+	g_adv:0.332
+	g_mask:0.091
+	g_mask_smooth:0.020
+	d_real:0.632
+	d_fake:0.157
+
+[10/04/2020 01:45:07] (T, epoch: 1, it: 984/1582, t/smpl: 0.168s)
+	g_rec:0.467
+	g_tsf:3.148
+	g_style:0.000
+	g_face:2.055
+	g_adv:0.321
+	g_mask:0.081
+	g_mask_smooth:0.020
+	d_real:0.132
+	d_fake:-0.526
+
+[10/04/2020 01:46:10] (T, epoch: 1, it: 1017/1582, t/smpl: 0.168s)
+	g_rec:0.447
+	g_tsf:3.074
+	g_style:0.000
+	g_face:1.972
+	g_adv:0.299
+	g_mask:0.102
+	g_mask_smooth:0.021
+	d_real:0.716
+	d_fake:0.453
+
+[10/04/2020 01:47:13] (T, epoch: 1, it: 1050/1582, t/smpl: 0.168s)
+	g_rec:0.398
+	g_tsf:3.027
+	g_style:0.000
+	g_face:1.966
+	g_adv:0.668
+	g_mask:0.095
+	g_mask_smooth:0.020
+	d_real:-0.210
+	d_fake:-0.787
+
+[10/04/2020 01:48:16] (T, epoch: 1, it: 1083/1582, t/smpl: 0.168s)
+	g_rec:0.358
+	g_tsf:2.954
+	g_style:0.000
+	g_face:2.024
+	g_adv:0.380
+	g_mask:0.089
+	g_mask_smooth:0.020
+	d_real:-0.001
+	d_fake:-0.557
+
+[10/04/2020 01:49:11] (Tv, epoch: 1, it: 1112/1582, t/smpl: 0.169s)
+	g_rec:0.381
+	g_tsf:2.803
+	g_style:0.000
+	g_face:1.828
+	g_adv:0.112
+	g_mask:0.092
+	g_mask_smooth:0.021
+	d_real:0.238
+	d_fake:-0.229
+
+[10/04/2020 01:49:13] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.381
+	g_tsf:2.803
+	g_style:0.000
+	g_face:1.828
+	g_adv:0.112
+	g_mask:0.092
+	g_mask_smooth:0.021
+	d_real:0.238
+	d_fake:-0.229
+
+[10/04/2020 01:50:14] (T, epoch: 1, it: 1143/1582, t/smpl: 0.168s)
+	g_rec:0.409
+	g_tsf:2.917
+	g_style:0.000
+	g_face:1.962
+	g_adv:0.047
+	g_mask:0.081
+	g_mask_smooth:0.021
+	d_real:0.377
+	d_fake:0.054
+
+[10/04/2020 01:51:16] (T, epoch: 1, it: 1176/1582, t/smpl: 0.168s)
+	g_rec:0.356
+	g_tsf:3.149
+	g_style:0.000
+	g_face:1.893
+	g_adv:0.336
+	g_mask:0.098
+	g_mask_smooth:0.021
+	d_real:0.698
+	d_fake:0.399
+
+[10/04/2020 01:52:19] (T, epoch: 1, it: 1209/1582, t/smpl: 0.168s)
+	g_rec:0.549
+	g_tsf:3.148
+	g_style:0.000
+	g_face:1.863
+	g_adv:0.153
+	g_mask:0.086
+	g_mask_smooth:0.021
+	d_real:0.097
+	d_fake:-0.263
+
+[10/04/2020 01:53:22] (T, epoch: 1, it: 1242/1582, t/smpl: 0.168s)
+	g_rec:0.511
+	g_tsf:3.302
+	g_style:0.000
+	g_face:1.913
+	g_adv:0.107
+	g_mask:0.099
+	g_mask_smooth:0.020
+	d_real:0.424
+	d_fake:-0.186
+
+[10/04/2020 01:54:17] (Tv, epoch: 1, it: 1271/1582, t/smpl: 0.169s)
+	g_rec:0.410
+	g_tsf:2.941
+	g_style:0.000
+	g_face:1.994
+	g_adv:0.179
+	g_mask:0.088
+	g_mask_smooth:0.020
+	d_real:0.064
+	d_fake:-0.305
+
+[10/04/2020 01:54:19] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.410
+	g_tsf:2.941
+	g_style:0.000
+	g_face:1.994
+	g_adv:0.179
+	g_mask:0.088
+	g_mask_smooth:0.020
+	d_real:0.064
+	d_fake:-0.305
+
+[10/04/2020 01:55:20] (T, epoch: 1, it: 1302/1582, t/smpl: 0.168s)
+	g_rec:0.353
+	g_tsf:3.195
+	g_style:0.000
+	g_face:2.137
+	g_adv:0.188
+	g_mask:0.094
+	g_mask_smooth:0.021
+	d_real:0.752
+	d_fake:0.188
+
+[10/04/2020 01:56:22] (T, epoch: 1, it: 1335/1582, t/smpl: 0.168s)
+	g_rec:0.462
+	g_tsf:3.436
+	g_style:0.000
+	g_face:1.865
+	g_adv:0.335
+	g_mask:0.101
+	g_mask_smooth:0.020
+	d_real:0.131
+	d_fake:-0.486
+
+[10/04/2020 01:57:25] (T, epoch: 1, it: 1368/1582, t/smpl: 0.168s)
+	g_rec:0.322
+	g_tsf:2.931
+	g_style:0.000
+	g_face:1.949
+	g_adv:0.283
+	g_mask:0.082
+	g_mask_smooth:0.021
+	d_real:0.107
+	d_fake:-0.453
+
+[10/04/2020 01:58:28] (T, epoch: 1, it: 1401/1582, t/smpl: 0.168s)
+	g_rec:0.399
+	g_tsf:2.919
+	g_style:0.000
+	g_face:1.940
+	g_adv:0.348
+	g_mask:0.082
+	g_mask_smooth:0.020
+	d_real:-0.094
+	d_fake:-0.525
+
+[10/04/2020 01:59:23] (Tv, epoch: 1, it: 1430/1582, t/smpl: 0.169s)
+	g_rec:0.434
+	g_tsf:3.126
+	g_style:0.000
+	g_face:1.895
+	g_adv:0.297
+	g_mask:0.085
+	g_mask_smooth:0.020
+	d_real:0.208
+	d_fake:-0.351
+
+[10/04/2020 01:59:25] (V, epoch: 1, time_to_val: 1s)
+	g_rec:0.434
+	g_tsf:3.126
+	g_style:0.000
+	g_face:1.895
+	g_adv:0.297
+	g_mask:0.085
+	g_mask_smooth:0.020
+	d_real:0.208
+	d_fake:-0.351
+
+[10/04/2020 02:00:25] (T, epoch: 1, it: 1461/1582, t/smpl: 0.168s)
+	g_rec:0.429
+	g_tsf:3.091
+	g_style:0.000
+	g_face:2.032
+	g_adv:0.524
+	g_mask:0.084
+	g_mask_smooth:0.020
+	d_real:0.043
+	d_fake:-0.609
+
+[10/04/2020 02:01:28] (T, epoch: 1, it: 1494/1582, t/smpl: 0.168s)
+	g_rec:0.418
+	g_tsf:3.100
+	g_style:0.000
+	g_face:1.922
+	g_adv:0.155
+	g_mask:0.094
+	g_mask_smooth:0.020
+	d_real:0.334
+	d_fake:-0.227
+
+[10/04/2020 02:02:31] (T, epoch: 1, it: 1527/1582, t/smpl: 0.168s)
+	g_rec:0.319
+	g_tsf:2.921
+	g_style:0.000
+	g_face:2.004
+	g_adv:1.340
+	g_mask:0.075
+	g_mask_smooth:0.021
+	d_real:-0.513
+	d_fake:-1.106
+
+[10/04/2020 02:03:34] (T, epoch: 1, it: 1560/1582, t/smpl: 0.168s)
+	g_rec:0.373
+	g_tsf:2.948
+	g_style:0.000
+	g_face:1.815
+	g_adv:0.248
+	g_mask:0.086
+	g_mask_smooth:0.021
+	d_real:0.167
+	d_fake:-0.397
+
+saving the model at the end of epoch 1, iters 18984
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_1_id_G.pth
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_1_id_D.pth
+End of epoch 1 / 30 	 Time Taken: 3059 sec (50 min or 0 h)
+[10/04/2020 02:04:29] (Tv, epoch: 2, it: 1/1582, t/smpl: 0.170s)
+	g_rec:0.410
+	g_tsf:3.158
+	g_style:0.000
+	g_face:1.985
+	g_adv:0.134
+	g_mask:0.090
+	g_mask_smooth:0.020
+	d_real:0.255
+	d_fake:-0.183
+
+[10/04/2020 02:04:31] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.410
+	g_tsf:3.158
+	g_style:0.000
+	g_face:1.985
+	g_adv:0.134
+	g_mask:0.090
+	g_mask_smooth:0.020
+	d_real:0.255
+	d_fake:-0.183
+
+[10/04/2020 02:05:31] (T, epoch: 2, it: 32/1582, t/smpl: 0.168s)
+	g_rec:0.281
+	g_tsf:2.780
+	g_style:0.000
+	g_face:1.929
+	g_adv:0.330
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:0.145
+	d_fake:-0.488
+
+[10/04/2020 02:06:34] (T, epoch: 2, it: 65/1582, t/smpl: 0.168s)
+	g_rec:0.478
+	g_tsf:3.139
+	g_style:0.000
+	g_face:2.041
+	g_adv:0.123
+	g_mask:0.084
+	g_mask_smooth:0.020
+	d_real:0.383
+	d_fake:-0.095
+
+[10/04/2020 02:07:37] (T, epoch: 2, it: 98/1582, t/smpl: 0.168s)
+	g_rec:0.325
+	g_tsf:2.735
+	g_style:0.000
+	g_face:2.105
+	g_adv:0.071
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:0.234
+	d_fake:-0.132
+
+[10/04/2020 02:08:40] (T, epoch: 2, it: 131/1582, t/smpl: 0.168s)
+	g_rec:0.397
+	g_tsf:3.077
+	g_style:0.000
+	g_face:2.168
+	g_adv:0.143
+	g_mask:0.090
+	g_mask_smooth:0.021
+	d_real:0.642
+	d_fake:0.075
+
+[10/04/2020 02:09:35] (Tv, epoch: 2, it: 160/1582, t/smpl: 0.169s)
+	g_rec:0.423
+	g_tsf:2.999
+	g_style:0.000
+	g_face:1.827
+	g_adv:0.137
+	g_mask:0.101
+	g_mask_smooth:0.020
+	d_real:0.450
+	d_fake:0.015
+
+[10/04/2020 02:09:37] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.423
+	g_tsf:2.999
+	g_style:0.000
+	g_face:1.827
+	g_adv:0.137
+	g_mask:0.101
+	g_mask_smooth:0.020
+	d_real:0.450
+	d_fake:0.015
+
+[10/04/2020 02:10:37] (T, epoch: 2, it: 191/1582, t/smpl: 0.168s)
+	g_rec:0.295
+	g_tsf:2.797
+	g_style:0.000
+	g_face:1.941
+	g_adv:0.204
+	g_mask:0.080
+	g_mask_smooth:0.021
+	d_real:0.162
+	d_fake:-0.293
+
+[10/04/2020 02:11:40] (T, epoch: 2, it: 224/1582, t/smpl: 0.168s)
+	g_rec:0.380
+	g_tsf:3.084
+	g_style:0.000
+	g_face:1.977
+	g_adv:0.081
+	g_mask:0.086
+	g_mask_smooth:0.021
+	d_real:0.505
+	d_fake:-0.013
+
+[10/04/2020 02:12:43] (T, epoch: 2, it: 257/1582, t/smpl: 0.168s)
+	g_rec:0.314
+	g_tsf:2.953
+	g_style:0.000
+	g_face:1.982
+	g_adv:0.224
+	g_mask:0.076
+	g_mask_smooth:0.020
+	d_real:0.135
+	d_fake:-0.248
+
+saving the latest model (epoch 2, total_steps 22392)
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_2_id_G.pth
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_2_id_D.pth
+[10/04/2020 02:13:47] (T, epoch: 2, it: 290/1582, t/smpl: 0.168s)
+	g_rec:0.498
+	g_tsf:2.856
+	g_style:0.000
+	g_face:1.627
+	g_adv:0.158
+	g_mask:0.093
+	g_mask_smooth:0.020
+	d_real:0.447
+	d_fake:-0.154
+
+[10/04/2020 02:14:42] (Tv, epoch: 2, it: 319/1582, t/smpl: 0.169s)
+	g_rec:0.312
+	g_tsf:2.654
+	g_style:0.000
+	g_face:1.857
+	g_adv:0.573
+	g_mask:0.071
+	g_mask_smooth:0.020
+	d_real:0.001
+	d_fake:-0.656
+
+[10/04/2020 02:14:44] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.312
+	g_tsf:2.654
+	g_style:0.000
+	g_face:1.857
+	g_adv:0.573
+	g_mask:0.071
+	g_mask_smooth:0.020
+	d_real:0.001
+	d_fake:-0.656
+
+[10/04/2020 02:15:44] (T, epoch: 2, it: 350/1582, t/smpl: 0.168s)
+	g_rec:0.352
+	g_tsf:2.906
+	g_style:0.000
+	g_face:1.968
+	g_adv:0.804
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:-0.295
+	d_fake:-0.796
+
+[10/04/2020 02:16:47] (T, epoch: 2, it: 383/1582, t/smpl: 0.168s)
+	g_rec:0.366
+	g_tsf:3.005
+	g_style:0.000
+	g_face:1.957
+	g_adv:0.183
+	g_mask:0.090
+	g_mask_smooth:0.020
+	d_real:0.209
+	d_fake:-0.333
+
+[10/04/2020 02:17:50] (T, epoch: 2, it: 416/1582, t/smpl: 0.168s)
+	g_rec:0.328
+	g_tsf:2.758
+	g_style:0.000
+	g_face:1.850
+	g_adv:0.121
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.363
+	d_fake:-0.265
+
+[10/04/2020 02:18:53] (T, epoch: 2, it: 449/1582, t/smpl: 0.168s)
+	g_rec:0.341
+	g_tsf:2.846
+	g_style:0.000
+	g_face:1.699
+	g_adv:0.148
+	g_mask:0.087
+	g_mask_smooth:0.021
+	d_real:0.246
+	d_fake:-0.282
+
+[10/04/2020 02:19:48] (Tv, epoch: 2, it: 478/1582, t/smpl: 0.169s)
+	g_rec:0.382
+	g_tsf:2.951
+	g_style:0.000
+	g_face:1.885
+	g_adv:0.139
+	g_mask:0.083
+	g_mask_smooth:0.020
+	d_real:0.333
+	d_fake:-0.252
+
+[10/04/2020 02:19:50] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.382
+	g_tsf:2.951
+	g_style:0.000
+	g_face:1.885
+	g_adv:0.139
+	g_mask:0.083
+	g_mask_smooth:0.020
+	d_real:0.333
+	d_fake:-0.252
+
+[10/04/2020 02:20:51] (T, epoch: 2, it: 509/1582, t/smpl: 0.168s)
+	g_rec:0.393
+	g_tsf:2.955
+	g_style:0.000
+	g_face:1.834
+	g_adv:0.179
+	g_mask:0.079
+	g_mask_smooth:0.020
+	d_real:0.439
+	d_fake:0.067
+
+[10/04/2020 02:21:53] (T, epoch: 2, it: 542/1582, t/smpl: 0.168s)
+	g_rec:0.304
+	g_tsf:2.765
+	g_style:0.000
+	g_face:2.022
+	g_adv:0.090
+	g_mask:0.079
+	g_mask_smooth:0.020
+	d_real:0.335
+	d_fake:-0.109
+
+[10/04/2020 02:22:56] (T, epoch: 2, it: 575/1582, t/smpl: 0.168s)
+	g_rec:0.267
+	g_tsf:2.764
+	g_style:0.000
+	g_face:1.802
+	g_adv:0.104
+	g_mask:0.079
+	g_mask_smooth:0.021
+	d_real:0.582
+	d_fake:0.162
+
+[10/04/2020 02:23:59] (T, epoch: 2, it: 608/1582, t/smpl: 0.168s)
+	g_rec:0.329
+	g_tsf:2.921
+	g_style:0.000
+	g_face:2.084
+	g_adv:0.253
+	g_mask:0.083
+	g_mask_smooth:0.020
+	d_real:0.123
+	d_fake:-0.416
+
+[10/04/2020 02:24:54] (Tv, epoch: 2, it: 637/1582, t/smpl: 0.169s)
+	g_rec:0.344
+	g_tsf:3.036
+	g_style:0.000
+	g_face:1.836
+	g_adv:0.223
+	g_mask:0.082
+	g_mask_smooth:0.021
+	d_real:0.216
+	d_fake:-0.377
+
+[10/04/2020 02:24:56] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.344
+	g_tsf:3.036
+	g_style:0.000
+	g_face:1.836
+	g_adv:0.223
+	g_mask:0.082
+	g_mask_smooth:0.021
+	d_real:0.216
+	d_fake:-0.377
+
+[10/04/2020 02:25:56] (T, epoch: 2, it: 668/1582, t/smpl: 0.168s)
+	g_rec:0.311
+	g_tsf:2.660
+	g_style:0.000
+	g_face:1.875
+	g_adv:0.043
+	g_mask:0.076
+	g_mask_smooth:0.020
+	d_real:0.469
+	d_fake:0.007
+
+[10/04/2020 02:26:59] (T, epoch: 2, it: 701/1582, t/smpl: 0.168s)
+	g_rec:0.355
+	g_tsf:2.971
+	g_style:0.000
+	g_face:1.915
+	g_adv:0.488
+	g_mask:0.089
+	g_mask_smooth:0.020
+	d_real:0.028
+	d_fake:-0.624
+
+[10/04/2020 02:28:02] (T, epoch: 2, it: 734/1582, t/smpl: 0.168s)
+	g_rec:0.285
+	g_tsf:2.855
+	g_style:0.000
+	g_face:2.047
+	g_adv:0.156
+	g_mask:0.080
+	g_mask_smooth:0.020
+	d_real:0.229
+	d_fake:-0.306
+
+[10/04/2020 02:29:05] (T, epoch: 2, it: 767/1582, t/smpl: 0.168s)
+	g_rec:0.337
+	g_tsf:2.851
+	g_style:0.000
+	g_face:2.033
+	g_adv:0.226
+	g_mask:0.076
+	g_mask_smooth:0.019
+	d_real:0.617
+	d_fake:0.252
+
+[10/04/2020 02:30:00] (Tv, epoch: 2, it: 796/1582, t/smpl: 0.169s)
+	g_rec:0.272
+	g_tsf:2.669
+	g_style:0.000
+	g_face:1.961
+	g_adv:0.117
+	g_mask:0.074
+	g_mask_smooth:0.020
+	d_real:0.479
+	d_fake:0.210
+
+[10/04/2020 02:30:02] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.272
+	g_tsf:2.669
+	g_style:0.000
+	g_face:1.961
+	g_adv:0.117
+	g_mask:0.074
+	g_mask_smooth:0.020
+	d_real:0.479
+	d_fake:0.210
+
+[10/04/2020 02:31:02] (T, epoch: 2, it: 827/1582, t/smpl: 0.168s)
+	g_rec:0.373
+	g_tsf:2.819
+	g_style:0.000
+	g_face:1.835
+	g_adv:0.519
+	g_mask:0.084
+	g_mask_smooth:0.021
+	d_real:0.117
+	d_fake:-0.453
+
+[10/04/2020 02:32:05] (T, epoch: 2, it: 860/1582, t/smpl: 0.168s)
+	g_rec:0.309
+	g_tsf:2.705
+	g_style:0.000
+	g_face:1.961
+	g_adv:0.503
+	g_mask:0.079
+	g_mask_smooth:0.020
+	d_real:-0.191
+	d_fake:-0.672
+
+[10/04/2020 02:33:07] (T, epoch: 2, it: 893/1582, t/smpl: 0.168s)
+	g_rec:0.289
+	g_tsf:2.805
+	g_style:0.000
+	g_face:1.780
+	g_adv:0.359
+	g_mask:0.085
+	g_mask_smooth:0.021
+	d_real:0.044
+	d_fake:-0.413
+
+[10/04/2020 02:34:10] (T, epoch: 2, it: 926/1582, t/smpl: 0.168s)
+	g_rec:0.287
+	g_tsf:2.799
+	g_style:0.000
+	g_face:1.931
+	g_adv:0.632
+	g_mask:0.074
+	g_mask_smooth:0.020
+	d_real:-0.083
+	d_fake:-0.722
+
+[10/04/2020 02:35:05] (Tv, epoch: 2, it: 955/1582, t/smpl: 0.169s)
+	g_rec:0.337
+	g_tsf:2.693
+	g_style:0.000
+	g_face:1.805
+	g_adv:0.130
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:0.554
+	d_fake:0.052
+
+[10/04/2020 02:35:07] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.337
+	g_tsf:2.693
+	g_style:0.000
+	g_face:1.805
+	g_adv:0.130
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:0.554
+	d_fake:0.052
+
+[10/04/2020 02:36:08] (T, epoch: 2, it: 986/1582, t/smpl: 0.168s)
+	g_rec:0.289
+	g_tsf:2.630
+	g_style:0.000
+	g_face:1.746
+	g_adv:0.173
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.209
+	d_fake:-0.283
+
+[10/04/2020 02:37:10] (T, epoch: 2, it: 1019/1582, t/smpl: 0.168s)
+	g_rec:0.386
+	g_tsf:2.947
+	g_style:0.000
+	g_face:1.690
+	g_adv:0.272
+	g_mask:0.087
+	g_mask_smooth:0.021
+	d_real:0.188
+	d_fake:-0.255
+
+[10/04/2020 02:38:13] (T, epoch: 2, it: 1052/1582, t/smpl: 0.168s)
+	g_rec:0.229
+	g_tsf:2.495
+	g_style:0.000
+	g_face:1.766
+	g_adv:0.199
+	g_mask:0.076
+	g_mask_smooth:0.020
+	d_real:0.009
+	d_fake:-0.371
+
+[10/04/2020 02:39:16] (T, epoch: 2, it: 1085/1582, t/smpl: 0.168s)
+	g_rec:0.357
+	g_tsf:2.743
+	g_style:0.000
+	g_face:1.785
+	g_adv:0.657
+	g_mask:0.081
+	g_mask_smooth:0.020
+	d_real:0.097
+	d_fake:-0.748
+
+[10/04/2020 02:40:11] (Tv, epoch: 2, it: 1114/1582, t/smpl: 0.169s)
+	g_rec:0.291
+	g_tsf:2.778
+	g_style:0.000
+	g_face:1.841
+	g_adv:0.202
+	g_mask:0.073
+	g_mask_smooth:0.020
+	d_real:0.144
+	d_fake:-0.246
+
+[10/04/2020 02:40:13] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.291
+	g_tsf:2.778
+	g_style:0.000
+	g_face:1.841
+	g_adv:0.202
+	g_mask:0.073
+	g_mask_smooth:0.020
+	d_real:0.144
+	d_fake:-0.246
+
+[10/04/2020 02:41:13] (T, epoch: 2, it: 1145/1582, t/smpl: 0.168s)
+	g_rec:0.339
+	g_tsf:3.019
+	g_style:0.000
+	g_face:1.919
+	g_adv:0.128
+	g_mask:0.090
+	g_mask_smooth:0.021
+	d_real:0.587
+	d_fake:0.120
+
+[10/04/2020 02:42:16] (T, epoch: 2, it: 1178/1582, t/smpl: 0.168s)
+	g_rec:0.271
+	g_tsf:2.713
+	g_style:0.000
+	g_face:1.811
+	g_adv:0.520
+	g_mask:0.073
+	g_mask_smooth:0.020
+	d_real:-0.038
+	d_fake:-0.658
+
+[10/04/2020 02:43:19] (T, epoch: 2, it: 1211/1582, t/smpl: 0.168s)
+	g_rec:0.293
+	g_tsf:2.641
+	g_style:0.000
+	g_face:1.883
+	g_adv:0.094
+	g_mask:0.081
+	g_mask_smooth:0.020
+	d_real:0.248
+	d_fake:-0.213
+
+[10/04/2020 02:44:22] (T, epoch: 2, it: 1244/1582, t/smpl: 0.168s)
+	g_rec:0.499
+	g_tsf:3.482
+	g_style:0.000
+	g_face:1.846
+	g_adv:0.703
+	g_mask:0.104
+	g_mask_smooth:0.021
+	d_real:1.090
+	d_fake:0.538
+
+[10/04/2020 02:45:17] (Tv, epoch: 2, it: 1273/1582, t/smpl: 0.169s)
+	g_rec:0.266
+	g_tsf:2.635
+	g_style:0.000
+	g_face:1.926
+	g_adv:0.214
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.119
+	d_fake:-0.325
+
+[10/04/2020 02:45:19] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.266
+	g_tsf:2.635
+	g_style:0.000
+	g_face:1.926
+	g_adv:0.214
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.119
+	d_fake:-0.325
+
+[10/04/2020 02:46:19] (T, epoch: 2, it: 1304/1582, t/smpl: 0.168s)
+	g_rec:0.323
+	g_tsf:2.885
+	g_style:0.000
+	g_face:1.908
+	g_adv:0.208
+	g_mask:0.075
+	g_mask_smooth:0.021
+	d_real:0.199
+	d_fake:-0.357
+
+[10/04/2020 02:47:22] (T, epoch: 2, it: 1337/1582, t/smpl: 0.168s)
+	g_rec:0.325
+	g_tsf:2.592
+	g_style:0.000
+	g_face:1.812
+	g_adv:0.430
+	g_mask:0.067
+	g_mask_smooth:0.020
+	d_real:0.608
+	d_fake:0.409
+
+[10/04/2020 02:48:25] (T, epoch: 2, it: 1370/1582, t/smpl: 0.168s)
+	g_rec:0.250
+	g_tsf:2.446
+	g_style:0.000
+	g_face:1.908
+	g_adv:0.078
+	g_mask:0.073
+	g_mask_smooth:0.020
+	d_real:0.116
+	d_fake:-0.185
+
+[10/04/2020 02:49:28] (T, epoch: 2, it: 1403/1582, t/smpl: 0.168s)
+	g_rec:0.293
+	g_tsf:2.611
+	g_style:0.000
+	g_face:1.758
+	g_adv:0.227
+	g_mask:0.074
+	g_mask_smooth:0.021
+	d_real:0.070
+	d_fake:-0.383
+
+[10/04/2020 02:50:23] (Tv, epoch: 2, it: 1432/1582, t/smpl: 0.169s)
+	g_rec:0.297
+	g_tsf:2.671
+	g_style:0.000
+	g_face:1.743
+	g_adv:0.517
+	g_mask:0.068
+	g_mask_smooth:0.019
+	d_real:0.125
+	d_fake:-0.663
+
+[10/04/2020 02:50:25] (V, epoch: 2, time_to_val: 1s)
+	g_rec:0.297
+	g_tsf:2.671
+	g_style:0.000
+	g_face:1.743
+	g_adv:0.517
+	g_mask:0.068
+	g_mask_smooth:0.019
+	d_real:0.125
+	d_fake:-0.663
+
+[10/04/2020 02:51:25] (T, epoch: 2, it: 1463/1582, t/smpl: 0.168s)
+	g_rec:0.271
+	g_tsf:2.688
+	g_style:0.000
+	g_face:1.786
+	g_adv:0.279
+	g_mask:0.082
+	g_mask_smooth:0.021
+	d_real:0.084
+	d_fake:-0.395
+
+[10/04/2020 02:52:28] (T, epoch: 2, it: 1496/1582, t/smpl: 0.168s)
+	g_rec:0.297
+	g_tsf:2.586
+	g_style:0.000
+	g_face:1.843
+	g_adv:0.505
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:-0.078
+	d_fake:-0.669
+
+[10/04/2020 02:53:31] (T, epoch: 2, it: 1529/1582, t/smpl: 0.168s)
+	g_rec:0.268
+	g_tsf:2.516
+	g_style:0.000
+	g_face:1.674
+	g_adv:0.040
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:0.132
+	d_fake:-0.114
+
+[10/04/2020 02:54:34] (T, epoch: 2, it: 1562/1582, t/smpl: 0.168s)
+	g_rec:0.319
+	g_tsf:2.714
+	g_style:0.000
+	g_face:1.702
+	g_adv:0.223
+	g_mask:0.081
+	g_mask_smooth:0.020
+	d_real:-0.160
+	d_fake:-0.399
+
+saving the model at the end of epoch 2, iters 37968
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_2_id_G.pth
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_2_id_D.pth
+End of epoch 2 / 30 	 Time Taken: 3055 sec (50 min or 0 h)
+[10/04/2020 02:55:28] (Tv, epoch: 3, it: 3/1582, t/smpl: 0.170s)
+	g_rec:0.228
+	g_tsf:2.796
+	g_style:0.000
+	g_face:2.001
+	g_adv:0.245
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.799
+	d_fake:0.443
+
+[10/04/2020 02:55:31] (V, epoch: 3, time_to_val: 1s)
+	g_rec:0.228
+	g_tsf:2.796
+	g_style:0.000
+	g_face:2.001
+	g_adv:0.245
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.799
+	d_fake:0.443
+
+[10/04/2020 02:56:31] (T, epoch: 3, it: 34/1582, t/smpl: 0.168s)
+	g_rec:0.216
+	g_tsf:2.529
+	g_style:0.000
+	g_face:1.879
+	g_adv:0.111
+	g_mask:0.069
+	g_mask_smooth:0.020
+	d_real:0.646
+	d_fake:0.222
+
+[10/04/2020 02:57:34] (T, epoch: 3, it: 67/1582, t/smpl: 0.168s)
+	g_rec:0.337
+	g_tsf:2.634
+	g_style:0.000
+	g_face:1.706
+	g_adv:0.209
+	g_mask:0.079
+	g_mask_smooth:0.021
+	d_real:0.668
+	d_fake:0.322
+
+[10/04/2020 02:58:36] (T, epoch: 3, it: 100/1582, t/smpl: 0.168s)
+	g_rec:0.253
+	g_tsf:2.605
+	g_style:0.000
+	g_face:1.738
+	g_adv:0.182
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.247
+	d_fake:-0.334
+
+[10/04/2020 02:59:39] (T, epoch: 3, it: 133/1582, t/smpl: 0.168s)
+	g_rec:0.335
+	g_tsf:2.793
+	g_style:0.000
+	g_face:1.930
+	g_adv:0.401
+	g_mask:0.071
+	g_mask_smooth:0.020
+	d_real:0.240
+	d_fake:-0.369
+
+[10/04/2020 03:00:34] (Tv, epoch: 3, it: 162/1582, t/smpl: 0.169s)
+	g_rec:0.240
+	g_tsf:2.771
+	g_style:0.000
+	g_face:1.835
+	g_adv:0.360
+	g_mask:0.069
+	g_mask_smooth:0.020
+	d_real:0.024
+	d_fake:-0.536
+
+[10/04/2020 03:00:36] (V, epoch: 3, time_to_val: 1s)
+	g_rec:0.240
+	g_tsf:2.771
+	g_style:0.000
+	g_face:1.835
+	g_adv:0.360
+	g_mask:0.069
+	g_mask_smooth:0.020
+	d_real:0.024
+	d_fake:-0.536
+
+[10/04/2020 03:01:37] (T, epoch: 3, it: 193/1582, t/smpl: 0.168s)
+	g_rec:0.294
+	g_tsf:2.710
+	g_style:0.000
+	g_face:2.007
+	g_adv:0.350
+	g_mask:0.075
+	g_mask_smooth:0.020
+	d_real:0.202
+	d_fake:-0.494
+
+[10/04/2020 03:02:39] (T, epoch: 3, it: 226/1582, t/smpl: 0.168s)
+	g_rec:0.226
+	g_tsf:2.622
+	g_style:0.000
+	g_face:1.925
+	g_adv:0.160
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.318
+	d_fake:-0.198
+
+[10/04/2020 03:03:42] (T, epoch: 3, it: 259/1582, t/smpl: 0.168s)
+	g_rec:0.291
+	g_tsf:2.898
+	g_style:0.000
+	g_face:1.959
+	g_adv:0.263
+	g_mask:0.073
+	g_mask_smooth:0.021
+	d_real:0.080
+	d_fake:-0.408
+
+[10/04/2020 03:04:45] (T, epoch: 3, it: 292/1582, t/smpl: 0.168s)
+	g_rec:0.258
+	g_tsf:2.668
+	g_style:0.000
+	g_face:1.644
+	g_adv:0.057
+	g_mask:0.071
+	g_mask_smooth:0.020
+	d_real:0.330
+	d_fake:-0.061
+
+[10/04/2020 03:05:40] (Tv, epoch: 3, it: 321/1582, t/smpl: 0.169s)
+	g_rec:0.295
+	g_tsf:2.753
+	g_style:0.000
+	g_face:2.012
+	g_adv:0.059
+	g_mask:0.085
+	g_mask_smooth:0.021
+	d_real:0.387
+	d_fake:-0.029
+
+[10/04/2020 03:05:42] (V, epoch: 3, time_to_val: 1s)
+	g_rec:0.295
+	g_tsf:2.753
+	g_style:0.000
+	g_face:2.012
+	g_adv:0.059
+	g_mask:0.085
+	g_mask_smooth:0.021
+	d_real:0.387
+	d_fake:-0.029
+
+[10/04/2020 03:06:42] (T, epoch: 3, it: 352/1582, t/smpl: 0.168s)
+	g_rec:0.522
+	g_tsf:2.867
+	g_style:0.000
+	g_face:1.962
+	g_adv:0.227
+	g_mask:0.079
+	g_mask_smooth:0.020
+	d_real:0.242
+	d_fake:-0.328
+
+[10/04/2020 03:07:45] (T, epoch: 3, it: 385/1582, t/smpl: 0.168s)
+	g_rec:0.287
+	g_tsf:2.721
+	g_style:0.000
+	g_face:1.868
+	g_adv:0.247
+	g_mask:0.074
+	g_mask_smooth:0.020
+	d_real:0.215
+	d_fake:-0.341
+
+[10/04/2020 03:08:48] (T, epoch: 3, it: 418/1582, t/smpl: 0.168s)
+	g_rec:0.344
+	g_tsf:2.991
+	g_style:0.000
+	g_face:1.784
+	g_adv:0.232
+	g_mask:0.085
+	g_mask_smooth:0.021
+	d_real:0.745
+	d_fake:0.339
+
+[10/04/2020 03:09:51] (T, epoch: 3, it: 451/1582, t/smpl: 0.168s)
+	g_rec:0.293
+	g_tsf:2.560
+	g_style:0.000
+	g_face:1.777
+	g_adv:0.413
+	g_mask:0.077
+	g_mask_smooth:0.020
+	d_real:-0.012
+	d_fake:-0.545
+
+[10/04/2020 03:10:46] (Tv, epoch: 3, it: 480/1582, t/smpl: 0.169s)
+	g_rec:0.292
+	g_tsf:2.821
+	g_style:0.000
+	g_face:1.780
+	g_adv:0.099
+	g_mask:0.080
+	g_mask_smooth:0.021
+	d_real:0.277
+	d_fake:-0.032
+
+[10/04/2020 03:10:48] (V, epoch: 3, time_to_val: 1s)
+	g_rec:0.292
+	g_tsf:2.821
+	g_style:0.000
+	g_face:1.780
+	g_adv:0.099
+	g_mask:0.080
+	g_mask_smooth:0.021
+	d_real:0.277
+	d_fake:-0.032
+
+[10/04/2020 03:11:48] (T, epoch: 3, it: 511/1582, t/smpl: 0.168s)
+	g_rec:0.288
+	g_tsf:2.829
+	g_style:0.000
+	g_face:1.816
+	g_adv:0.211
+	g_mask:0.081
+	g_mask_smooth:0.021
+	d_real:0.169
+	d_fake:-0.364
+
+[10/04/2020 03:12:51] (T, epoch: 3, it: 544/1582, t/smpl: 0.168s)
+	g_rec:0.239
+	g_tsf:2.503
+	g_style:0.000
+	g_face:1.820
+	g_adv:0.087
+	g_mask:0.063
+	g_mask_smooth:0.021
+	d_real:0.376
+	d_fake:0.063
+
+saving the latest model (epoch 3, total_steps 44784)
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_3_id_G.pth
+saved net: /home/ronak1997_gmail_com/impersonator/trained_models/exp_iPER/net_epoch_3_id_D.pth
+[10/04/2020 03:13:55] (T, epoch: 3, it: 577/1582, t/smpl: 0.168s)
+	g_rec:0.288
+	g_tsf:2.710
+	g_style:0.000
+	g_face:1.848
+	g_adv:0.100
+	g_mask:0.070
+	g_mask_smooth:0.020
+	d_real:0.516
+	d_fake:0.104
+
+[10/04/2020 03:14:57] (T, epoch: 3, it: 610/1582, t/smpl: 0.167s)
+	g_rec:0.324
+	g_tsf:2.672
+	g_style:0.000
+	g_face:1.700
+	g_adv:0.154
+	g_mask:0.070
+	g_mask_smooth:0.020
+	d_real:0.287
+	d_fake:-0.240
+
+[10/04/2020 03:15:53] (Tv, epoch: 3, it: 639/1582, t/smpl: 0.169s)
+	g_rec:0.262
+	g_tsf:2.637
+	g_style:0.000
+	g_face:1.796
+	g_adv:0.102
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.535
+	d_fake:0.103
+
+[10/04/2020 03:15:55] (V, epoch: 3, time_to_val: 1s)
+	g_rec:0.262
+	g_tsf:2.637
+	g_style:0.000
+	g_face:1.796
+	g_adv:0.102
+	g_mask:0.072
+	g_mask_smooth:0.020
+	d_real:0.535
+	d_fake:0.103
+
+[10/04/2020 03:16:55] (T, epoch: 3, it: 670/1582, t/smpl: 0.168s)
+	g_rec:0.272
+	g_tsf:2.537
+	g_style:0.000
+	g_face:1.687
+	g_adv:0.131
+	g_mask:0.071
+	g_mask_smooth:0.020
+	d_real:0.610
+	d_fake:0.245
+
+[10/04/2020 03:17:58] (T, epoch: 3, it: 703/1582, t/smpl: 0.168s)
+	g_rec:0.235
+	g_tsf:2.464
+	g_style:0.000
+	g_face:1.735
+	g_adv:0.156
+	g_mask:0.070
+	g_mask_smooth:0.020
+	d_real:0.079
+	d_fake:-0.317
+
+[10/04/2020 03:19:00] (T, epoch: 3, it: 736/1582, t/smpl: 0.168s)
+	g_rec:0.240
+	g_tsf:2.648
+	g_style:0.000
+	g_face:1.794
+	g_adv:0.067
+	g_mask:0.074
+	g_mask_smooth:0.020
+	d_real:0.315
+	d_fake:-0.056
+
+[10/04/2020 03:20:03] (T, epoch: 3, it: 769/1582, t/smpl: 0.168s)
+	g_rec:0.303
+	g_tsf:2.715
+	g_style:0.000
+	g_face:1.655
+	g_adv:0.058
+	g_mask:0.066
+	g_mask_smooth:0.020
+	d_real:0.432
+	d_fake:0.005
+
+[10/04/2020 03:20:58] (Tv, epoch: 3, it: 798/1582, t/smpl: 0.169s)
+	g_rec:0.220
+	g_tsf:2.462
+	g_style:0.000
+	g_face:1.771
+	g_adv:0.555
+	g_mask:0.068
+	g_mask_smooth:0.019
+	d_real:-0.246
+	d_fake:-0.703
+

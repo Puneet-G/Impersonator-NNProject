@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 from .networks import NetworkBase
+from utils.util import Swish
 import torch
 import ipdb
 
@@ -12,7 +13,7 @@ class ResidualBlock(nn.Module):
         self.main = nn.Sequential(
             nn.Conv2d(dim_in, dim_out, kernel_size=3, stride=1, padding=1, bias=False),
             nn.InstanceNorm2d(dim_out, affine=True),
-            nn.ReLU(inplace=True),
+            nn.ReLU(inplace=True), #Swish(), #nn.ReLU(inplace=True),
             nn.Conv2d(dim_out, dim_out, kernel_size=3, stride=1, padding=1, bias=False),
             nn.InstanceNorm2d(dim_out, affine=True))
 
@@ -25,7 +26,7 @@ class ResNetGenerator(NetworkBase):
     def __init__(self, conv_dim=64, c_dim=5, repeat_num=9, k_size=4, n_down=2):
         super(ResNetGenerator, self).__init__()
         self._name = 'resnet_generator'
-
+        print('init: ', self._name)
         layers = []
         layers.append(nn.Conv2d(c_dim, conv_dim, kernel_size=7, stride=1, padding=3, bias=False))
         layers.append(nn.InstanceNorm2d(conv_dim, affine=True))
@@ -36,7 +37,7 @@ class ResNetGenerator(NetworkBase):
         for i in range(n_down):
             layers.append(nn.Conv2d(curr_dim, curr_dim*2, kernel_size=k_size, stride=2, padding=1, bias=False))
             layers.append(nn.InstanceNorm2d(curr_dim*2, affine=True))
-            layers.append(nn.ReLU(inplace=True))
+            layers.append(nn.ReLU(inplace=True)) #Swish()) #nn.ReLU(inplace=True))
             curr_dim = curr_dim * 2
 
         # Bottleneck
@@ -48,7 +49,7 @@ class ResNetGenerator(NetworkBase):
             layers.append(nn.ConvTranspose2d(curr_dim, curr_dim//2, kernel_size=k_size, stride=2, padding=1,
                                              output_padding=1, bias=False))
             layers.append(nn.InstanceNorm2d(curr_dim//2, affine=True))
-            layers.append(nn.ReLU(inplace=True))
+            layers.append(nn.ReLU(inplace=True)) #Swish()) #nn.ReLU(inplace=True))
             curr_dim = curr_dim // 2
 
         layers.append(nn.Conv2d(curr_dim, 3, kernel_size=7, stride=1, padding=3, bias=False))
@@ -193,6 +194,7 @@ class ImpersonatorGenerator(NetworkBase):
         self.n_down = 3
         self.repeat_num = repeat_num
         # background generator
+        print('background generator')
         self.bg_model = ResNetGenerator(conv_dim=conv_dim, c_dim=bg_dim, repeat_num=repeat_num, k_size=3, n_down=self.n_down)
 
         # source generator
