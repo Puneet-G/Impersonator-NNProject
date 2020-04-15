@@ -15,6 +15,7 @@ test_ids_file=val.txt
 # saving configs
 checkpoints_dir=/home/ronak1997_gmail_com/impersonator/trained_models   # directory to save models, need to be replaced!!!!!
 name=exp_ReLU_base_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
+loss_path="trained_models/${name}/loss_log2.txt"
 
 # model configs
 model=impersonator_trainer
