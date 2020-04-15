@@ -3,12 +3,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import functools
 from .networks import NetworkBase
+from .spectral_norm import SpectralNorm
 
 
 class PatchDiscriminator(NetworkBase):
     """Defines a PatchGAN discriminator"""
 
-    def __init__(self, input_nc, ndf=64, n_layers=3, norm_type='batch', use_sigmoid=False):
+    def __init__(self, input_nc, ndf=64, n_layers=3, norm_type='batch', use_sigmoid=False, sn=False):
         """Construct a PatchGAN discriminator
         Parameters:
             input_nc (int)  -- the number of channels in input images
@@ -26,27 +27,52 @@ class PatchDiscriminator(NetworkBase):
 
         kw = 4
         padw = 1
-        sequence = [nn.Conv2d(input_nc, ndf, kernel_size=kw, stride=2, padding=padw), nn.LeakyReLU(0.2, True)]
+        conv_l1 = nn.Conv2d(input_nc, ndf, kernel_size=kw, stride=2, padding=padw)
+        print('Spectral Norm=', sn)
+        if sn:
+            sequence = [SpectralNorm(conv_l1), nn.LeakyReLU(0.2, True)]
+        else:
+            sequence = [conv_l1, nn.LeakyReLU(0.2, True)]
         nf_mult = 1
         nf_mult_prev = 1
         for n in range(1, n_layers):  # gradually increase the number of filters
             nf_mult_prev = nf_mult
             nf_mult = min(2 ** n, 8)
-            sequence += [
-                nn.Conv2d(ndf * nf_mult_prev, ndf * nf_mult, kernel_size=kw, stride=2, padding=padw, bias=use_bias),
+            conv_l2 = nn.Conv2d(ndf * nf_mult_prev, ndf * nf_mult, kernel_size=kw, stride=2, padding=padw, bias=use_bias)
+            if sn:
+                sequence += [
+                SpectralNorm(conv_l2),
+                norm_layer(ndf * nf_mult),
+                nn.LeakyReLU(0.2, True)
+            ]
+            else:
+                sequence += [
+                conv_l2,
                 norm_layer(ndf * nf_mult),
                 nn.LeakyReLU(0.2, True)
             ]
 
         nf_mult_prev = nf_mult
         nf_mult = min(2 ** n_layers, 8)
-        sequence += [
-            nn.Conv2d(ndf * nf_mult_prev, ndf * nf_mult, kernel_size=kw, stride=1, padding=padw, bias=use_bias),
+        conv_l3 = nn.Conv2d(ndf * nf_mult_prev, ndf * nf_mult, kernel_size=kw, stride=1, padding=padw, bias=use_bias)
+        if sn:
+            sequence += [
+            SpectralNorm(conv_l3),
+            norm_layer(ndf * nf_mult),
+            nn.LeakyReLU(0.2, True)
+        ]
+        else:
+            sequence += [
+            conv_l3,
             norm_layer(ndf * nf_mult),
             nn.LeakyReLU(0.2, True)
         ]
 
-        sequence += [nn.Conv2d(ndf * nf_mult, 1, kernel_size=kw, stride=1, padding=padw)]  # output 1 channel prediction map
+        conv_l4 = nn.Conv2d(ndf * nf_mult, 1, kernel_size=kw, stride=1, padding=padw)
+        if sn:
+            sequence += [SpectralNorm(conv_l4)]
+        else:
+            sequence += [conv_l4]  # output 1 channel prediction map
 
         if use_sigmoid:
             sequence += [nn.Sigmoid()]
@@ -125,6 +151,3 @@ class MultiScaleDiscriminator(NetworkBase):
             scale_outs.append(outs)
 
         return scale_outs
-
-
-
