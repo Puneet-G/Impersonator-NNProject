@@ -99,7 +99,10 @@ def main():
     test_opt.front_warp = False
     test_opt.post_tune = True
 
-    test_opt.output_dir = mkdir('./outputs/results/demos/imitators')
+    load_path = test_opt.load_path
+    exp_name = load_path.split("/")[1]
+
+    test_opt.output_dir = mkdir('./outputs/results/demos/imitators/' + exp_name)
     # source images from iPER
     images_paths = ['./assets/src_imgs/david_beckham_blue_tie_standee-resized.jpg',
                     './assets/src_imgs/beachshorts.jpg',
