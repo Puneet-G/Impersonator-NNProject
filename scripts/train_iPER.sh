@@ -14,8 +14,11 @@ test_ids_file=val.txt
 
 # saving configs
 checkpoints_dir=/home/ronak1997_gmail_com/impersonator/trained_models   # directory to save models, need to be replaced!!!!!
-name=exp_ReLU_base_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
+name=exp_gp2_ReLU_g1-4_d3-4_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
 loss_path="trained_models/${name}/loss_log2.txt"
+string2="${name}"
+string3="${string2:4}"
+exp_name="${string3%?????}"
 
 # model configs
 model=impersonator_trainer
@@ -62,3 +65,5 @@ python train.py --gpu_ids ${gpu_ids}        \
     --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
     --mask_bce     --use_vgg       --use_face  
 
+python plot_graph.py --path ${loss_path}  --tag ${exp_name}
+zip -r plots.zip plots
