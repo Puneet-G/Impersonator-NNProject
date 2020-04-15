@@ -113,6 +113,8 @@ def main():
 
     # clean other files
     clean(test_opt.output_dir)
+ 
+        
 
     print('Completed! All demo videos are save in {}'.format(test_opt.output_dir))
 

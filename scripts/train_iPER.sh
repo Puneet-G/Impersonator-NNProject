@@ -14,11 +14,12 @@ test_ids_file=val.txt
 
 # saving configs
 checkpoints_dir=/home/ronak1997_gmail_com/impersonator/trained_models   # directory to save models, need to be replaced!!!!!
-name=exp_gp2_ReLU_g1-4_d3-4_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
+name=exp_ReLU_base_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
 loss_path="trained_models/${name}/loss_log2.txt"
-string2="${name}"
-string3="${string2:4}"
-exp_name="${string3%?????}"
+trained_models_path="trained_models/${name}"
+first_gpu=${gpu_ids:0:1}
+inf_out_path="./outputs/results/demos/imitators/${name}"
+inf_out_zip_path="${inf_out_path}.zip"
 
 # model configs
 model=impersonator_trainer
@@ -63,7 +64,10 @@ python train.py --gpu_ids ${gpu_ids}        \
     --lr_G             ${lr_G}              \
     --lr_D             ${lr_D}              \
     --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
-    --mask_bce     --use_vgg       --use_face  
+    --mask_bce     --use_vgg       --use_face  # --spectral_norm  # --gradient_penalty  
 
-python plot_graph.py --path ${loss_path}  --tag ${exp_name}
+python plot_graph.py --path ${loss_path}  --tag ${name}
 zip -r plots.zip plots
+
+.scripts/run_inf.sh ${trained_models_path} 5 30 5 ${first_gpu}
+zip -r ${inf_out_zip_path}  ${inf_out_path}

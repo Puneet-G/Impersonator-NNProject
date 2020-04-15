@@ -1,4 +1,7 @@
 load_path=$1
+gpu_id=$5
+
+echo $gpu_id
 
 if [ -z "$2" ] || [ -z "$3" ]
 then
@@ -25,6 +28,6 @@ i=$min_epoch
 while [ $i -le $max_epoch ]
     do
         full_path="${load_path}net_epoch_${i}_id_G.pth"
-        python demo_imitator.py --gpu_ids 0 --load_path ${full_path}
+        python demo_imitator.py --gpu_ids ${gpu_id} --load_path ${full_path}
         i=$(( i+step ))
     done
