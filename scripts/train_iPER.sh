@@ -71,3 +71,5 @@ zip -r plots.zip plots
 
 .scripts/run_inf.sh ${trained_models_path} 5 30 5 ${first_gpu}
 zip -r ${inf_out_zip_path}  ${inf_out_path}
+
+echo Inference run is complete. The results are at: $inf_out_zip_path
