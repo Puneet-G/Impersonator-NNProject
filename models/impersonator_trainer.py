@@ -220,7 +220,7 @@ class Impersonator(BaseModel):
 
     def _create_discriminator(self):
         return NetworksFactory.get_by_name('discriminator_patch_gan', input_nc=3 + self._D_cond_nc,
-                                           norm_type=self._opt.norm_type, ndf=64, n_layers=4, use_sigmoid=False)
+                                           norm_type=self._opt.norm_type, ndf=64, n_layers=4, use_sigmoid=False) #, sn=self._opt.spectral_norm)
 
     def _init_train_vars(self):
         print("---------- Generator LR:{0} ---------- DISCRIMINATOR LR:{1} ----------".format(self._opt.lr_G, self._opt.lr_D))

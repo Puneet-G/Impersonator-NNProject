@@ -24,7 +24,7 @@ echo $max_epoch
 i=$min_epoch
 while [ $i -le $max_epoch ]
     do
-        full_path = '${load_path}/net_epoch_${i}_id_G.pth'
-        python demo_imitator.py --gpu_ids 0 -load_path ${full_path}
+        full_path="${load_path}net_epoch_${i}_id_G.pth"
+        python demo_imitator.py --gpu_ids 0 --load_path ${full_path}
         i=$(( i+step ))
     done

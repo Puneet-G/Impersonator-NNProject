@@ -1,0 +1,300 @@
+------------ Options -------------
+D_adam_b1: 0.5
+D_adam_b2: 0.999
+G_adam_b1: 0.5
+G_adam_b2: 0.999
+batch_size: 24
+bg_both: False
+bg_replace: False
+checkpoints_dir: /home/ronak1997_gmail_com/impersonator/trained_models
+cond_nc: 3
+data_dir: /home/ronak1997_gmail_com/impersonator/train_data
+dataset_mode: iPER
+debug: False
+display_freq_s: 300
+do_saturate_mask: False
+face_model: assets/pretrains/sphere20a_20171020.pth
+fashion_bs: 4
+fashion_dir: /public/deep_fashion/intrinsic
+final_lr: 2e-06
+gen_name: impersonator
+gpu_ids: 2,3
+gradient_penalty: False
+hmr_model: assets/pretrains/hmr_tf2pt.pth
+image_size: 256
+images_folder: images
+intervals: 10
+is_train: True
+lambda_D_prob: 1
+lambda_face: 5.0
+lambda_mask: 1.0
+lambda_mask_smooth: 1.0
+lambda_rec: 10.0
+lambda_style: 0.0
+lambda_tsf: 10.0
+load_epoch: 0
+load_path: None
+lr_D: 0.0004
+lr_G: 0.0001
+map_name: uv_seg
+mask_bce: True
+model: impersonator_trainer
+n_threads_test: 2
+n_threads_train: 6
+name: exp_ReLU_g1-4_d4-4_iPER
+nepochs_decay: 25
+nepochs_no_decay: 5
+norm_type: instance
+num_iters_validate: 1
+part_info: assets/pretrains/smpl_part_info.json
+place_bs: 4
+place_dir: /p300/places365_standard
+print_freq_s: 60
+repeat_num: 6
+save_latest_freq_s: 3600
+serial_batches: False
+smpl_model: assets/pretrains/smpl_model.pkl
+smpls_folder: smpls
+spectral_norm: False
+test_ids_file: val.txt
+tex_size: 3
+time_step: 10
+train_G_every_n_iterations: 1
+train_ids_file: train.txt
+use_face: True
+use_style: False
+use_vgg: True
+uv_mapping: assets/pretrains/mapper.txt
+-------------- End ----------------
+/home/ronak1997_gmail_com/impersonator/trained_models/exp_ReLU_g1-4_d4-4_iPER
+loading video = 006/1/1, 0 / 164
+loading video = 006/1/2, 1 / 164
+loading video = 001/5/1, 2 / 164
+loading video = 001/5/2, 3 / 164
+loading video = 001/6/1, 4 / 164
+loading video = 001/6/2, 5 / 164
+loading video = 001/29/1, 6 / 164
+loading video = 001/29/2, 7 / 164
+loading video = 001/21/1, 8 / 164
+loading video = 001/21/2, 9 / 164
+loading video = 009/7/1, 10 / 164
+loading video = 009/7/2, 11 / 164
+loading video = 019/1/1, 12 / 164
+loading video = 019/1/2, 13 / 164
+loading video = 028/1/1, 14 / 164
+loading video = 028/1/2, 15 / 164
+loading video = 015/3/1, 16 / 164
+loading video = 015/3/2, 17 / 164
+loading video = 018/1/1, 18 / 164
+loading video = 018/1/2, 19 / 164
+loading video = 001/16/1, 20 / 164
+loading video = 001/16/2, 21 / 164
+loading video = 019/3/1, 22 / 164
+loading video = 019/3/2, 23 / 164
+loading video = 024/2/1, 24 / 164
+loading video = 024/2/2, 25 / 164
+loading video = 021/1/1, 26 / 164
+loading video = 021/1/2, 27 / 164
+loading video = 004/2/1, 28 / 164
+loading video = 004/2/2, 29 / 164
+loading video = 015/2/1, 30 / 164
+loading video = 015/2/2, 31 / 164
+loading video = 001/4/1, 32 / 164
+loading video = 001/4/2, 33 / 164
+loading video = 001/14/1, 34 / 164
+loading video = 001/14/2, 35 / 164
+loading video = 012/1/1, 36 / 164
+loading video = 012/1/2, 37 / 164
+loading video = 001/2/1, 38 / 164
+loading video = 001/2/2, 39 / 164
+loading video = 009/4/1, 40 / 164
+loading video = 009/4/2, 41 / 164
+loading video = 001/32/1, 42 / 164
+loading video = 001/32/2, 43 / 164
+loading video = 014/1/1, 44 / 164
+loading video = 014/1/2, 45 / 164
+loading video = 005/1/1, 46 / 164
+loading video = 005/1/2, 47 / 164
+loading video = 026/3/1, 48 / 164
+loading video = 026/3/2, 49 / 164
+loading video = 016/1/1, 50 / 164
+loading video = 016/1/2, 51 / 164
+loading video = 009/6/1, 52 / 164
+loading video = 009/6/2, 53 / 164
+loading video = 009/8/1, 54 / 164
+loading video = 009/8/2, 55 / 164
+loading video = 001/20/1, 56 / 164
+loading video = 001/20/2, 57 / 164
+loading video = 001/7/1, 58 / 164
+loading video = 001/7/2, 59 / 164
+loading video = 008/3/1, 60 / 164
+loading video = 008/3/2, 61 / 164
+loading video = 001/28/1, 62 / 164
+loading video = 001/28/2, 63 / 164
+loading video = 023/1/1, 64 / 164
+loading video = 023/1/2, 65 / 164
+loading video = 022/1/1, 66 / 164
+loading video = 022/1/2, 67 / 164
+loading video = 007/3/1, 68 / 164
+loading video = 007/3/2, 69 / 164
+loading video = 024/1/1, 70 / 164
+loading video = 024/1/2, 71 / 164
+loading video = 001/17/1, 72 / 164
+loading video = 001/17/2, 73 / 164
+loading video = 024/6/1, 74 / 164
+loading video = 024/6/2, 75 / 164
+loading video = 009/1/1, 76 / 164
+loading video = 009/1/2, 77 / 164
+loading video = 024/5/1, 78 / 164
+loading video = 024/5/2, 79 / 164
+loading video = 001/24/1, 80 / 164
+loading video = 001/24/2, 81 / 164
+loading video = 003/1/1, 82 / 164
+loading video = 003/1/2, 83 / 164
+loading video = 026/2/1, 84 / 164
+loading video = 026/2/2, 85 / 164
+loading video = 009/3/1, 86 / 164
+loading video = 009/3/2, 87 / 164
+loading video = 012/3/1, 88 / 164
+loading video = 012/3/2, 89 / 164
+loading video = 013/1/1, 90 / 164
+loading video = 013/1/2, 91 / 164
+loading video = 001/33/1, 92 / 164
+loading video = 001/33/2, 93 / 164
+loading video = 001/12/1, 94 / 164
+loading video = 001/12/2, 95 / 164
+loading video = 001/1/1, 96 / 164
+loading video = 001/1/2, 97 / 164
+loading video = 001/10/1, 98 / 164
+loading video = 001/10/2, 99 / 164
+loading video = 001/15/1, 100 / 164
+loading video = 001/15/2, 101 / 164
+loading video = 025/2/1, 102 / 164
+loading video = 025/2/2, 103 / 164
+loading video = 007/2/1, 104 / 164
+loading video = 007/2/2, 105 / 164
+loading video = 012/4/1, 106 / 164
+loading video = 012/4/2, 107 / 164
+loading video = 028/2/1, 108 / 164
+loading video = 028/2/2, 109 / 164
+loading video = 027/2/1, 110 / 164
+loading video = 027/2/2, 111 / 164
+loading video = 001/30/1, 112 / 164
+loading video = 001/30/2, 113 / 164
+loading video = 009/2/1, 114 / 164
+loading video = 009/2/2, 115 / 164
+loading video = 020/1/1, 116 / 164
+loading video = 020/1/2, 117 / 164
+loading video = 002/1/1, 118 / 164
+loading video = 002/1/2, 119 / 164
+loading video = 023/2/1, 120 / 164
+loading video = 023/2/2, 121 / 164
+loading video = 026/4/1, 122 / 164
+loading video = 026/4/2, 123 / 164
+loading video = 001/25/1, 124 / 164
+loading video = 001/25/2, 125 / 164
+loading video = 024/3/1, 126 / 164
+loading video = 024/3/2, 127 / 164
+loading video = 001/22/1, 128 / 164
+loading video = 001/22/2, 129 / 164
+loading video = 027/3/1, 130 / 164
+loading video = 027/3/2, 131 / 164
+loading video = 024/9/1, 132 / 164
+loading video = 024/9/2, 133 / 164
+loading video = 025/3/1, 134 / 164
+loading video = 025/3/2, 135 / 164
+loading video = 001/8/1, 136 / 164
+loading video = 001/8/2, 137 / 164
+loading video = 008/1/1, 138 / 164
+loading video = 008/1/2, 139 / 164
+loading video = 022/2/1, 140 / 164
+loading video = 022/2/2, 141 / 164
+loading video = 015/1/1, 142 / 164
+loading video = 015/1/2, 143 / 164
+loading video = 001/26/1, 144 / 164
+loading video = 001/26/2, 145 / 164
+loading video = 006/2/1, 146 / 164
+loading video = 006/2/2, 147 / 164
+loading video = 027/1/1, 148 / 164
+loading video = 027/1/2, 149 / 164
+loading video = 001/27/1, 150 / 164
+loading video = 001/27/2, 151 / 164
+loading video = 001/3/1, 152 / 164
+loading video = 001/3/2, 153 / 164
+loading video = 001/23/1, 154 / 164
+loading video = 001/23/2, 155 / 164
+loading video = 001/13/1, 156 / 164
+loading video = 001/13/2, 157 / 164
+loading video = 030/1/1, 158 / 164
+loading video = 030/1/2, 159 / 164
+loading video = 024/4/1, 160 / 164
+loading video = 024/4/2, 161 / 164
+loading video = 008/2/1, 162 / 164
+loading video = 008/2/2, 163 / 164
+Dataset ImPerDataset was created
+loading video = 019/2/1, 0 / 42
+loading video = 019/2/2, 1 / 42
+loading video = 017/1/1, 2 / 42
+loading video = 017/1/2, 3 / 42
+loading video = 024/8/1, 4 / 42
+loading video = 024/8/2, 5 / 42
+loading video = 026/1/1, 6 / 42
+loading video = 026/1/2, 7 / 42
+loading video = 001/11/1, 8 / 42
+loading video = 001/11/2, 9 / 42
+loading video = 010/3/1, 10 / 42
+loading video = 010/3/2, 11 / 42
+loading video = 010/2/1, 12 / 42
+loading video = 010/2/2, 13 / 42
+loading video = 025/1/1, 14 / 42
+loading video = 025/1/2, 15 / 42
+loading video = 001/31/1, 16 / 42
+loading video = 001/31/2, 17 / 42
+loading video = 007/1/1, 18 / 42
+loading video = 007/1/2, 19 / 42
+loading video = 029/1/1, 20 / 42
+loading video = 029/1/2, 21 / 42
+loading video = 023/3/1, 22 / 42
+loading video = 023/3/2, 23 / 42
+loading video = 001/18/1, 24 / 42
+loading video = 001/18/2, 25 / 42
+loading video = 001/9/1, 26 / 42
+loading video = 001/9/2, 27 / 42
+loading video = 012/2/1, 28 / 42
+loading video = 012/2/2, 29 / 42
+loading video = 011/1/1, 30 / 42
+loading video = 011/1/2, 31 / 42
+loading video = 024/7/1, 32 / 42
+loading video = 024/7/2, 33 / 42
+loading video = 009/5/1, 34 / 42
+loading video = 009/5/2, 35 / 42
+loading video = 010/1/1, 36 / 42
+loading video = 010/1/2, 37 / 42
+loading video = 001/19/1, 38 / 42
+loading video = 001/19/2, 39 / 42
+loading video = 004/1/1, 40 / 42
+loading video = 004/1/2, 41 / 42
+Dataset ImPerDataset was created
+#train video clips = 18988
+#test video clips = 5074
+background generator
+init:  resnet_generator
+Network impersonator was created
+Network discriminator_patch_gan was created
+---------- Generator LR:0.0001 ---------- DISCRIMINATOR LR:0.0004 ----------
+loading vgg19 ...
+load face model from assets/pretrains/sphere20a_20171020.pth
+Model Impersonator was created
+[15/04/2020 04:17:55] (Tv, epoch: 1, it: 0/791, t/smpl: 0.258s)
+	g_rec:7.395
+	g_tsf:9.236
+	g_style:0.000
+	g_face:5.627
+	g_adv:1.612
+	g_mask:0.662
+	g_mask_smooth:0.148
+	d_real:0.445
+	d_fake:0.452
+
+/home/rahul170492_gmail_com/.pyenv/versions/rlenv/lib/python3.6/site-packages/torch/nn/parallel/_functions.py:61: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
