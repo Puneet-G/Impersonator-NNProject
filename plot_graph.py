@@ -16,7 +16,6 @@ from matplotlib.pyplot import figure
 figure(num=None, figsize=(8, 6), dpi=80, facecolor='w', edgecolor='k')
 parser = argparse.ArgumentParser()
 parser.add_argument("-P", "--path", help="path to log file", required=True)
-parser.add_argument("-T", "--tag", help="tag for output files", required=True)
 args = vars(parser.parse_args())
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'plots')
 if not os.path.exists(output_dir):
@@ -74,8 +73,8 @@ for name, df in data_splits.items():
         ax.set_ylim([min(y_tick_index), max(y_tick_index)])
         ax.yaxis.set_label_text('Loss value')
         ax.set_yticks(y_tick_index)
-        ax.set_title(args['tag'] + '-' + name + ' Loss - ' + i)
-        plt.savefig(output_path+'/' + args['tag']+'_'+name+'_'+i+'_loss.png', dpi=300)
+        ax.set_title(exp_name + '-' + name + ' Loss - ' + i)
+        plt.savefig(output_path+'/' + ex_name+'_'+name+'_'+i+'_loss.png', dpi=300)
 
 for name, df in data_splits.items():
     df = df.reset_index()
@@ -96,8 +95,8 @@ for name, df in data_splits.items():
     ax.set_ylim([min(y_tick_index), max(y_tick_index)])
     ax.yaxis.set_label_text('Loss value')
     ax.set_yticks(y_tick_index)
-    ax.set_title(args['tag'] + ' - ' + name + ' Loss')
-    plt.savefig(output_path+'/'+args['tag']+'_'+name+'_all_loss.png', dpi=300)
+    ax.set_title(exp_name + ' - ' + name + ' Loss')
+    plt.savefig(output_path+'/'+exp_name+'_'+name+'_all_loss.png', dpi=300)
 
 
 

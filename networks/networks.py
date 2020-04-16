@@ -52,16 +52,10 @@ class NetworkBase(nn.Module):
         return self._name
 
     def init_weights(self):
-        a = self.children()
-        for child in a:
-            print('child:', child)
         self.apply(self._weights_init_fn)
 
     def _weights_init_fn(self, m):
         classname = m.__class__.__name__
-        #print('m:', m)
-        #print('m type:', type(m))
-        #print('class:', classname)
         if classname.find('Conv') != -1:
            try:
                 m.weight.data.normal_(0.0, 0.02)
@@ -69,17 +63,6 @@ class NetworkBase(nn.Module):
                    m.bias.data.fill_(0)
            except:
                 pass
-                # Means its in a conv layer that is Spectral Norm, the class takes care of it
-                #print('----------Conv Attributes Start----------')
-                #for att in dir(m):
-                #   print(att)
-                #print('----------Conv Attributes End----------')
-       # if classname.find('Spectral') != -1:
-           #print('in spectral block')
-           #print('----------Spectral Attributes Start----------')
-           #for att in dir(m):
-           #     print(att)
-           #print('----------Spectral Attributes Start----------')
         elif classname.find('BatchNorm2d') != -1:
             m.weight.data.normal_(1.0, 0.02)
             m.bias.data.fill_(0)
