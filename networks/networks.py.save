@@ -64,22 +64,11 @@ class NetworkBase(nn.Module):
         #print('class:', classname)
         if classname.find('Conv') != -1:
            try:
-                m.weight.data.normal_(0.0, 0.02)
+                 m.weight.data.normal_(0.0, 0.02)
                 if hasattr(m.bias, 'data'):
-                   m.bias.data.fill_(0)
-           except:
-                pass
-                # Means its in a conv layer that is Spectral Norm, the class takes care of it
-                #print('----------Conv Attributes Start----------')
-                #for att in dir(m):
-                #   print(att)
-                #print('----------Conv Attributes End----------')
-       # if classname.find('Spectral') != -1:
-           #print('in spectral block')
-           #print('----------Spectral Attributes Start----------')
-           #for att in dir(m):
-           #     print(att)
-           #print('----------Spectral Attributes Start----------')
+                m.bias.data.fill_(0)
+        if classname.find('Spectral') != -1:
+           print('in spectral block')
         elif classname.find('BatchNorm2d') != -1:
             m.weight.data.normal_(1.0, 0.02)
             m.bias.data.fill_(0)

@@ -21,7 +21,9 @@ args = vars(parser.parse_args())
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'plots')
 if not os.path.exists(output_dir):
   os.mkdir(output_dir)
-output_path = os.path.join(output_dir, args['tag'])
+load_path_split = args['path'].split('/')
+exp_name = load_path_split[1]
+output_path = os.path.join(output_dir, exp_name)
 if not os.path.exists(output_path):
   os.mkdir(output_path)
 column_list = ['val_type', 'epoch', 'it_n', 'it_max', 'g_rec', 'g_tsf', 'g_style', 'g_face', 'g_adv', 'g_mask', 'g_mask_smooth', 'd_real', 'd_fake']

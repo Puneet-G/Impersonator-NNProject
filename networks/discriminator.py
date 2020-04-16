@@ -28,9 +28,12 @@ class PatchDiscriminator(NetworkBase):
         kw = 4
         padw = 1
         conv_l1 = nn.Conv2d(input_nc, ndf, kernel_size=kw, stride=2, padding=padw)
-        print('Spectral Norm=', sn)
+        #print('Spectral Norm=', sn)
         if sn:
             sequence = [SpectralNorm(conv_l1), nn.LeakyReLU(0.2, True)]
+            #print('---------sequence Class:', sequence.__class__.__name__)
+            #print('---------sequence[0] Class:', sequence[0].__class__.__name__)
+            #print('---------L1 Spectral Norm Layer Name:', SpectralNorm(conv_l1).__class__.__name__,'---------')
         else:
             sequence = [conv_l1, nn.LeakyReLU(0.2, True)]
         nf_mult = 1
@@ -51,7 +54,7 @@ class PatchDiscriminator(NetworkBase):
                 norm_layer(ndf * nf_mult),
                 nn.LeakyReLU(0.2, True)
             ]
-
+            #print('---------DS Spectral Norm Layer Name:', SpectralNorm(conv_l2).__class__.__name__,'---------')
         nf_mult_prev = nf_mult
         nf_mult = min(2 ** n_layers, 8)
         conv_l3 = nn.Conv2d(ndf * nf_mult_prev, ndf * nf_mult, kernel_size=kw, stride=1, padding=padw, bias=use_bias)
@@ -67,13 +70,13 @@ class PatchDiscriminator(NetworkBase):
             norm_layer(ndf * nf_mult),
             nn.LeakyReLU(0.2, True)
         ]
-
+        #print('---------L3 Spectral Norm Layer Name:', SpectralNorm(conv_l3).__class__.__name__,'---------')
         conv_l4 = nn.Conv2d(ndf * nf_mult, 1, kernel_size=kw, stride=1, padding=padw)
         if sn:
             sequence += [SpectralNorm(conv_l4)]
         else:
             sequence += [conv_l4]  # output 1 channel prediction map
-
+        #print('---------L4 Spectral Norm Layer Name:', SpectralNorm(conv_l4).__class__.__name__,'---------')
         if use_sigmoid:
             sequence += [nn.Sigmoid()]
         self.model = nn.Sequential(*sequence)
