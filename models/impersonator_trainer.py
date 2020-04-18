@@ -288,7 +288,8 @@ use_sigmoid=False, sn=self._opt.spectral_norm)
         # init losses D
         self._d_real = self._Tensor([0])
         self._d_fake = self._Tensor([0])
-        print('----------------D Real Type: ', self._d_fake.dtype, ' D Fake Type: ', self._d_real.dtype,'----------------')
+        self._d_real_loss = self._Tensor([0])
+        self._d_fake_loss = self._Tensor([0])
 
     def set_input(self, input):
 
@@ -412,11 +413,11 @@ use_sigmoid=False, sn=self._opt.spectral_norm)
 
         _loss_d_fake = self._compute_loss_D(d_fake_outs, -1) * self._opt.lambda_D_prob
 
+        self._d_real_loss = _loss_d_real
+        self._d_fake_loss = _loss_d_fake
+
         self._d_real = torch.mean(d_real_outs)
         self._d_fake = torch.mean(d_fake_outs)
-        with open('/home/ronak1997_gmail_com/impersonator/negative_log.log', 'a') as f:
-            f.write("".join(['-']*80), 'D Real', self._d_fake.dtype, ' D Fake Type: ', self._d_real.dtype,'----------------')
-            f.write("".join(['-']*80), '\nD Real Value: \n', self._d_fake, ' \n\nD Fake Value: \n', self._d_real,'\n----------------')
 
         # Gradient Penalty - Puneet
         gp_weight = 2
@@ -437,14 +438,7 @@ use_sigmoid=False, sn=self._opt.spectral_norm)
         return _loss_d_real + _loss_d_fake + gp
 
     def _compute_loss_D(self, x, y):
-        a = torch.mean((x - y) ** 2)
-        if(y == -1):
-            val = 'D Fake'
-        elif:
-            val = 'D Real'
-        with open('/home/ronak1997_gmail_com/impersonator/negative_log.log', 'a') as f:
-            f.write("".join(['-']*80),'Computing ', val, ': ', a, '-----------')
-        return a
+        return torch.mean((x - y) ** 2)
 
     def _compute_loss_smooth(self, mat):
         return torch.mean(torch.abs(mat[:, :, :, :-1] - mat[:, :, :, 1:])) + \
@@ -459,7 +453,9 @@ use_sigmoid=False, sn=self._opt.spectral_norm)
                                  ('g_mask', self._loss_g_mask.item()),
                                  ('g_mask_smooth', self._loss_g_mask_smooth.item()),
                                  ('d_real', self._d_real.item()),
-                                 ('d_fake', self._d_fake.item())])
+                                 ('d_fake', self._d_fake.item()),
+                                 ('d_real_loss', self._d_real_loss.item()),
+                                 ('d_fake_loss', self._d_fake_loss.item())])
 
         return loss_dict
 

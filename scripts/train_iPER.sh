@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # basic configs
-gpu_ids=0,1     # if using multi-gpus, increasing the batch_size
+gpu_ids=2,3     # if using multi-gpus, increasing the batch_size
 #gpu_ids=0
 
 # dataset configs
@@ -14,9 +14,9 @@ test_ids_file=val.txt
 
 # saving configs
 checkpoints_dir=/home/ronak1997_gmail_com/impersonator/trained_models   # directory to save models, need to be replaced!!!!!
-name=exp_ReLU_LS_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
+name=exp_ReLU_LRec15_iPER   # the directory is ${checkpoints_dir}/name, which is used to save the checkpoints.
 loss_path="trained_models/${name}/loss_log2.txt"
-trained_models_path="trained_models/${name}"
+trained_models_path="trained_models/${name}/"
 first_gpu=${gpu_ids:0:1}
 inf_out_path="./outputs/results/demos/imitators/${name}"
 inf_out_zip_path="${inf_out_path}.zip"
@@ -30,7 +30,7 @@ image_size=256
 # training configs
 load_path="None"
 batch_size=24
-lambda_rec=10.0
+lambda_rec=15.0
 lambda_tsf=10.0
 lambda_face=5.0
 lambda_style=0.0
@@ -65,9 +65,9 @@ python train.py --gpu_ids ${gpu_ids}        \
     --lr_G             ${lr_G}              \
     --lr_D             ${lr_D}              \
     --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
-    --mask_bce     --use_vgg       --use_face     --label_smooth       #--spectral_norm  # --gradient_penalty
+    --mask_bce     --use_vgg       --use_face    # --label_smooth       #--spectral_norm  # --gradient_penalty
 
-python plot_graph.py --path ${loss_path}  --tag ${name}
+python plot_graph.py --path ${loss_path}
 sudo chmod -R 777 ${graph_output}
 zip -r plots.zip plots
 sudo chmod -R 777 plots.zip
