@@ -183,8 +183,8 @@ class Imitator(BaseModel):
                 filename = os.path.split(tgt_path)[-1]
 
                 cv_utils.save_cv2_img(preds, os.path.join(output_dir, 'pred_' + filename), normalize=True)
-                cv_utils.save_cv2_img(self.tsf_info['image'], os.path.join(output_dir, 'gt_' + filename),
-                                      image_size=self._opt.image_size)
+                #cv_utils.save_cv2_img(self.tsf_info['image'], os.path.join(output_dir, 'gt_' + filename),
+                                      #image_size=self._opt.image_size)
 
         return outputs
     
