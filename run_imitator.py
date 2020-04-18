@@ -10,6 +10,7 @@ from models.imitator import Imitator
 from options.test_options import TestOptions
 from utils.visdom_visualizer import VisdomVisualizer
 from utils.util import load_pickle_file, write_pickle_file, mkdirs, mkdir, clear_dir
+from utils.video import make_video
 import utils.cv_utils as cv_utils
 
 
@@ -69,7 +70,7 @@ def scan_tgt_paths(tgt_path, itv=20):
 def meta_imitate(opt, imitator, prior_tgt_path, save_imgs=True, visualizer=None):
     src_path = opt.src_path
 
-    all_tgt_paths = scan_tgt_paths(prior_tgt_path, itv=40)
+    all_tgt_paths = scan_tgt_paths(prior_tgt_path, itv=10)
     output_dir = opt.output_dir
 
     out_img_dir, out_pair_dir = mkdirs([os.path.join(output_dir, 'imgs'), os.path.join(output_dir, 'pairs')])
@@ -239,6 +240,10 @@ if __name__ == "__main__":
     tgt_paths = scan_tgt_paths(test_opt.tgt_path, itv=1)
     imitator.inference(tgt_paths, tgt_smpls=None, cam_strategy='smooth',
                        output_dir=pred_output_dir, visualizer=visualizer, verbose=True)
+
+    mp4_path = test_opt.output_dir + test_opt.output_dir.split('/')[-2] + '.mp4'
+    imgs = sorted(glob.glob('%s/*.jpg' % os.path.join(output_dir, 'imgs')))
+    make_video(mp4_path, imgs, save_frames_dir=None, fps=10)
 
 
 
