@@ -6,6 +6,7 @@ TODO:
 - 0.25 y-axis epochscale
 
 '''
+# importing packages
 import pandas as pd
 import numpy as np
 import re
@@ -13,18 +14,26 @@ import os
 import matplotlib.pyplot as plt
 import argparse
 from matplotlib.pyplot import figure
+# 
+# setting default fig size
 figure(num=None, figsize=(8, 6), dpi=80, facecolor='w', edgecolor='k')
+#
+# defining arguement parser
 parser = argparse.ArgumentParser()
 parser.add_argument("-P", "--path", help="path to log file", required=True)
 args = vars(parser.parse_args())
+#
+# output path derived from current __file__ location
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'plots')
 if not os.path.exists(output_dir):
   os.mkdir(output_dir)
+# extract experiment name and create folder
 load_path_split = args['path'].split('/')
 exp_name = load_path_split[1]
 output_path = os.path.join(output_dir, exp_name)
 if not os.path.exists(output_path):
   os.mkdir(output_path)
+#
 column_list = ['val_type', 'epoch', 'it_n', 'it_max', 'g_rec', 'g_tsf', 'g_style', 'g_face', 'g_adv', 'g_mask', 'g_mask_smooth', 'd_real', 'd_fake', 'd_real_loss', 'd_fake_loss']
 val_cols = ['g_rec', 'g_tsf', 'g_style', 'g_face', 'g_adv', 'g_mask', 'g_mask_smooth', 'd_real', 'd_fake', 'd_real_loss', 'd_fake_loss']
 y_min , y_max, y_diff = (-2, 6, 0.5)
@@ -43,9 +52,10 @@ def get_value(row):
 data_buffer = []
 with open(args['path'],'r') as f:
     data_buffer.append(f.readlines())
-# remove the training header line
-data = list(filter(lambda x : len(x)<70, data_buffer[0]))
-data = np.array_split(data, len(data)/11)
+# split into data points
+indices = [i for i, s in enumerate(data_buffer[0]) if 'epoch' in s]
+data_lists = np.array_split(data_buffer[0], indices)
+data = [i for i in data_lists if len(i)>10] 
 # extract relevant values from
 clean_data = [get_value(i) for i in data]
 # convert to dataframe
@@ -75,6 +85,9 @@ for name, df in data_splits.items():
         ax.set_yticks(y_tick_index)
         ax.set_title(exp_name + '-' + name + ' Loss - ' + i)
         plt.savefig(output_path+'/' + exp_name+'_'+name+'_'+i+'_loss.png', dpi=300)
+        plt.clf()
+        plt.cla()
+        plt.close('all')
 
 for name, df in data_splits.items():
     df = df.reset_index()
@@ -97,3 +110,6 @@ for name, df in data_splits.items():
     ax.set_yticks(y_tick_index)
     ax.set_title(exp_name + ' - ' + name + ' Loss')
     plt.savefig(output_path+'/'+exp_name+'_'+name+'_all_loss.png', dpi=300)
+    plt.clf()
+    plt.cla()
+    plt.close('all')
