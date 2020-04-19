@@ -42,38 +42,38 @@ nepochs_decay=25    # decreasing the learning rate when epoch ranges in [6, 25+5
 lr_G=0.0002
 lr_D=0.0002
 
-python train.py --gpu_ids ${gpu_ids}        \
-    --data_dir  ${data_dir}                 \
-    --images_folder    ${images_folder}     \
-    --smpls_folder     ${smpls_folder}      \
-    --checkpoints_dir  ${checkpoints_dir}   \
-    --train_ids_file   ${train_ids_file}    \
-    --test_ids_file    ${test_ids_file}     \
-    --load_path        ${load_path}         \
-    --model            ${model}             \
-    --gen_name         ${gen_name}          \
-    --name             ${name}              \
-    --dataset_mode     ${dataset_model}     \
-    --image_size       ${image_size}        \
-    --batch_size       ${batch_size}        \
-    --lambda_face      ${lambda_face}       \
-    --lambda_tsf       ${lambda_tsf}        \
-    --lambda_style     ${lambda_style}      \
-    --lambda_rec       ${lambda_rec}         \
-    --lambda_mask      ${lambda_mask}       \
-    --lambda_mask_smooth  ${lambda_mask_smooth} \
-    --lr_G             ${lr_G}              \
-    --lr_D             ${lr_D}              \
-    --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
-    --mask_bce     --use_vgg       --use_face    # --label_smooth       #--spectral_norm  # --gradient_penalty
+#python train.py --gpu_ids ${gpu_ids}        \
+#    --data_dir  ${data_dir}                 \
+#    --images_folder    ${images_folder}     \
+#    --smpls_folder     ${smpls_folder}      \
+#    --checkpoints_dir  ${checkpoints_dir}   \
+#    --train_ids_file   ${train_ids_file}    \
+#    --test_ids_file    ${test_ids_file}     \
+#    --load_path        ${load_path}         \
+#    --model            ${model}             \
+#    --gen_name         ${gen_name}          \
+#    --name             ${name}              \
+#    --dataset_mode     ${dataset_model}     \
+#    --image_size       ${image_size}        \
+#    --batch_size       ${batch_size}        \
+#    --lambda_face      ${lambda_face}       \
+#    --lambda_tsf       ${lambda_tsf}        \
+#    --lambda_style     ${lambda_style}      \
+#    --lambda_rec       ${lambda_rec}         \
+#    --lambda_mask      ${lambda_mask}       \
+#    --lambda_mask_smooth  ${lambda_mask_smooth} \
+#    --lr_G             ${lr_G}              \
+#    --lr_D             ${lr_D}              \
+#    --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
+#    --mask_bce     --use_vgg       --use_face    # --label_smooth       #--spectral_norm  # --gradient_penalty
 
 python plot_graph.py --path ${loss_path}
 sudo chmod -R 777 ${graph_output}
 zip -r plots.zip plots
 sudo chmod -R 777 plots.zip
 
-./scripts/run_inf.sh ${trained_models_path} 5 30 5 ${first_gpu}
-sudo chmod -R 777 ${inf_out_path}
-zip -r ${inf_out_zip_path}  ${inf_out_path}
+#./scripts/run_inf.sh ${trained_models_path} 5 30 5 ${first_gpu}
+#sudo chmod -R 777 ${inf_out_path}
+#zip -r ${inf_out_zip_path}  ${inf_out_path}
 
-echo Inference run is complete. The results are at: $inf_out_zip_path
+#echo Inference run is complete. The results are at: $inf_out_zip_path

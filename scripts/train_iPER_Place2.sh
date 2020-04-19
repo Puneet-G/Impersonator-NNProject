@@ -6,8 +6,8 @@ gpu_ids=1
 
 # dataset configs
 dataset_model=iPER_place  # use iPER_place dataset
-data_dir=/p300/iccv/iPER_examples  # need to be replaced!!!!!
-place_dir=/p300/iccv/places365_standard  # need to be replaced!!!!!
+data_dir=/home/ronak1997_gmail_com/impersonator/train_data  # need to be replaced!!!!!
+place_dir=/home/ronak1997_gmail_com/impersonator/train_data/places365_standard  # need to be replaced!!!!!
 images_folder=images
 smpls_folder=smpls
 train_ids_file=train.txt

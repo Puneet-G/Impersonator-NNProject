@@ -44,5 +44,3 @@ while [ $i -le $max_epoch ]
 
 zip_name="${exp_name}.zip"
 sudo chmod -R 777 ${output_dir}
-zip -rj ${zip_name} ${output_dir}
-
