@@ -89,7 +89,7 @@ class Train(object):
                 self._last_display_time = time.time()
                 i += 1
 
-            if (i > = 2):
+            if (i >= 2):
                 break
 
             # save model

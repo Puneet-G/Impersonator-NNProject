@@ -30,18 +30,18 @@ image_size=256
 # training configs
 load_path="None"
 batch_size=24
-lambda_rec=15.0
+lambda_rec=10.0
 lambda_tsf=10.0
 lambda_face=5.0
 lambda_style=0.0
 lambda_mask=1.0
 #lambda_mask=2.5
 lambda_mask_smooth=1.0
-nepochs_no_decay=15  # fixing learning rate when epoch ranges in [0, 5]
-nepochs_decay=15    # decreasing the learning rate when epoch ranges in [6, 25+5]
-lr_G=0.0004
-lr_D=0.0001
-final_lr=0.00001
+nepochs_no_decay=5  # fixing learning rate when epoch ranges in [0, 5]
+nepochs_decay=25    # decreasing the learning rate when epoch ranges in [6, 25+5]
+lr_G=0.0002
+lr_D=0.0002
+#final_lr=0.00001
 
 python trainTwoBatch.py --gpu_ids ${gpu_ids}        \
     --data_dir  ${data_dir}                 \
@@ -65,9 +65,8 @@ python trainTwoBatch.py --gpu_ids ${gpu_ids}        \
     --lambda_mask_smooth  ${lambda_mask_smooth} \
     --lr_G             ${lr_G}              \
     --lr_D             ${lr_D}              \
-    --final_lr         ${final_lr}          \
     --nepochs_no_decay ${nepochs_no_decay}  --nepochs_decay ${nepochs_decay}  \
-    --mask_bce     --use_vgg       --use_face   --spectral_norm     # --label_smooth   # --gradient_penalty
+    --mask_bce     --use_vgg       --use_face  # --spectral_norm     # --label_smooth   # --gradient_penalty
 
 python plot_graphTwoBatch.py --path ${loss_path}
 sudo chmod -R 777 ${graph_output}
