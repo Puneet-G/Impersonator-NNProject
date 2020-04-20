@@ -241,6 +241,6 @@ if __name__ == "__main__":
     imitator.inference(tgt_paths, tgt_smpls=None, cam_strategy='smooth',
                        output_dir=pred_output_dir, visualizer=visualizer, verbose=True)
 
-    mp4_path = test_opt.output_dir + test_opt.output_dir.split('/')[-3] + '_' + test_opt.output_dir.split('/')[-2] '.mp4'
+    mp4_path = test_opt.output_dir + test_opt.output_dir.split('/')[-3] + '_' + test_opt.output_dir.split('/')[-2] + '.mp4'
     imgs = sorted(glob.glob('%s/*.jpg' % pred_output_dir))
     make_video(mp4_path, imgs, save_frames_dir=None, fps=30)

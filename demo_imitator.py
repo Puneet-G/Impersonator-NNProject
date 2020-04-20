@@ -104,17 +104,17 @@ def main():
     print('-----------------------\n','EXP NAME: ',exp_name,'\n--------------------------')
     test_opt.output_dir = mkdir('./outputs/results/demos/imitators/' + exp_name)
     # source images from iPER
-    images_paths = ['./assets/src_imgs/david_beckham_blue_tie_standee-resized.jpg',
-                    './assets/src_imgs/beachshorts.jpg',
-                    './assets/src_imgs/fashion_woman/Sweaters-id_0000088807_4_full.jpg']
+    images_paths = ['./assets/src_imgs/plaid_shirt.jpg']
+                    #'./assets/src_imgs/beachshorts.jpg',
+                    #'./assets/src_imgs/fashion_woman/Sweaters-id_0000088807_4_full.jpg']
 
     for src_img_path in tqdm(images_paths):
         generate_actor_result(test_opt, src_img_path)
 
     # clean other files
     clean(test_opt.output_dir)
- 
-        
+
+
 
     print('Completed! All demo videos are save in {}'.format(test_opt.output_dir))
 

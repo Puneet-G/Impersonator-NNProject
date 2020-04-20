@@ -24,7 +24,7 @@ echo $min_epoch
 echo $max_epoch
 
 load_path="./trained_models/${exp_name}/"
-output_dir="./outputs/results/runOutput/imitator/${exp_name}/"
+output_dir="./outputs/results/runOutput/plaid_shirt/${exp_name}/"
 echo $load_path
 echo $output_dir
 
@@ -36,7 +36,7 @@ while [ $i -le $max_epoch ]
         python run_imitator.py --gpu_ids ${gpu_id}                                     \
             --load_path ${full_path} --model imitator                                  \
             --output_dir ${epoch_output}                                               \
-            --src_path ./assets/src_imgs/beachshorts.jpg                               \
+            --src_path ./assets/src_imgs/plaid_shirt.jpg                               \
             --tgt_path ./assets/samples/refs/iPER/024_8_2                              \
             --bg_ks 7 --ft_ks 3 --has_detector --post_tune --front_warp --save_res     
         i=$(( i+step ))
