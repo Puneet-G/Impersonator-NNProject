@@ -420,8 +420,8 @@ use_sigmoid=False, sn=self._opt.spectral_norm)
         self._d_fake = torch.mean(d_fake_outs)
 
         # Gradient Penalty - Puneet
-        gp_weight = 2
-        if self._opt.gradient_penalty:
+        # gp_weight = 2
+        if self._opt.gradient_penalty!=0:
             alpha = torch.rand(real_input_D.shape[0], 1, 1, 1)
             alpha = alpha.expand_as(real_input_D).cuda()
             interp_images = Variable(alpha * real_input_D.data + (1 - alpha) * fake_input_D.data, requires_grad=True).cuda()

@@ -43,7 +43,7 @@ class TrainOptions(BaseOptions):
         self._parser.add_argument('--lambda_face', type=float, default=1, help='lambda face loss')
         self._parser.add_argument('--lambda_mask', type=float, default=0.1, help='lambda mask loss')
         self._parser.add_argument('--lambda_mask_smooth', type=float, default=1e-5, help='lambda mask smooth loss')
-        self._parser.add_argument('--gradient_penalty', action='store_true', help='whether to use gradient penalty or not')
+        self._parser.add_argument('--gradient_penalty', type=float, default=0.0, help='gradient penalty weight')
         self._parser.add_argument('--spectral_norm', action='store_true', help='whether to use spectral norm or not')
         self._parser.add_argument('--label_smooth', action='store_true', help='whether to use one sided label smoothing or not')
         self.is_train = True

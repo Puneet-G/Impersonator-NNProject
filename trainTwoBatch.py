@@ -90,7 +90,7 @@ class Train(object):
                 self._display_visualizer_val(i_epoch, self._total_steps)
                 self._last_display_time = time.time()
 
-            if (i >= 2):
+            if (i >= 5):
                 break
 
             # save model
