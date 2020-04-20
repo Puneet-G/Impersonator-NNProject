@@ -21,7 +21,7 @@ class Train(object):
         print('#test video clips = %d' % self._dataset_test_size)
 
         #self._model = ModelsFactory.get_by_name(self._opt.model, self._opt)
-        self._tb_visualizer = TBVisualizer(self._opt)
+        self._tb_visualizer = TBVisualizer(self._opt)   
 
         self._train()
 
@@ -81,13 +81,13 @@ class Train(object):
             if do_print_terminal:
                 self._display_terminal(iter_start_time, i_epoch, i_train_batch, do_visuals)
                 self._last_print_time = time.time()
+                i += 1
 
             # display visualizer
             if do_visuals:
                 self._display_visualizer_train(self._total_steps)
                 self._display_visualizer_val(i_epoch, self._total_steps)
                 self._last_display_time = time.time()
-                i += 1
 
             if (i >= 2):
                 break
