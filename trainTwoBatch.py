@@ -36,6 +36,8 @@ class Train(object):
             self._opt.load_epoch = i_epoch
             if(i_epoch != 0):
                 self._model.load()
+            else:
+                self._model = ModelsFactory.get_by_name(self._opt.model, self._opt)
             epoch_start_time = time.time()
 
             # train epoch
