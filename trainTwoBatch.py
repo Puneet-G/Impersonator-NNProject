@@ -32,6 +32,7 @@ class Train(object):
         self._last_save_latest_time = None
         self._last_print_time = time.time()
 
+        self._opt.load_epoch = -1
         for i_epoch in range(self._opt.load_epoch + 1, self._opt.nepochs_no_decay + self._opt.nepochs_decay + 1):
             self._opt.load_epoch = i_epoch
             if(i_epoch != 0):

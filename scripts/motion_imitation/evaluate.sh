@@ -1,13 +1,12 @@
 #! /bin/bash
-
-data_dir="/p300/tpami/iPER"  # need to be replaced!!!!!
-output_dir="/p300/tpami/baselines/WarpingStrategy/LWB-add/evaluations/iPER"  # need to be replaced!!!!!
+name="exp_ReLU_base_iPER"
+data_dir="/home/ronak1997_gmail_com/impersonator/train_data"  # need to be replaced!!!!!
+output_dir="./outputs/results/evalOutput/${name}"  # need to be replaced!!!!!
 
 ##
-gpu=8
+gpu=0
 gen_name="impersonator"
-name="imper_results"
-checkpoints_dir="./outputs/checkpoints/"
+checkpoints_dir="./trained_models/${name}/"
 ## if use ImPer dataset trained model
 #load_path="./outputs/checkpoints/lwb_imper/net_epoch_30_id_G.pth"
 
@@ -15,7 +14,7 @@ checkpoints_dir="./outputs/checkpoints/"
 #load_path="./outputs/checkpoints/lwb_imper_place/net_epoch_30_id_G.pth"
 
 ## if use ImPer, DeepFashion, and Place datasets trained model
-load_path="./outputs/checkpoints/lwb_imper_fashion_place/net_epoch_30_id_G.pth"
+load_path="./trained_models/${name}/net_epoch_20_id_G.pth"
 
 ## if use DeepFillv2 trained background inpainting network,
 bg_model="./outputs/checkpoints/deepfillv2/net_epoch_50_id_G.pth"

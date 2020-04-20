@@ -11,7 +11,7 @@ class TBVisualizer(object):
         self._opt = opt
         self._save_path = os.path.join(opt.checkpoints_dir, opt.name)
 
-        self._log_path = os.path.join(self._save_path, 'loss_log2.txt')
+        self._log_path = os.path.join(self._save_path, 'TwoBatchloss_log2.txt')
         self._tb_path = os.path.join(self._save_path, 'summary.json')
         self._writer = SummaryWriter(self._save_path)
 
