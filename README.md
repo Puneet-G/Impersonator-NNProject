@@ -1,5 +1,5 @@
-# Impersonator
-PyTorch implementation of an ICCV 2019 paper:
+# Impersonator - Liquid Warping GAN: An Exploratory Analysis
+PyTorch implementation and expansion of an ICCV 2019 paper:
 
 Liquid Warping GAN: A Unified Framework for Human Motion Imitation, Appearance Transfer and Novel View Synthesis
 
@@ -157,23 +157,3 @@ The details of each running scripts are shown in [runDetails.md](doc/runDetails.
 ### Evaluation
 Run ```./scripts/motion_imitation/evaluate.sh```.
 The details of the evaluation on iPER dataset in [his_evaluators](./thirdparty/his_evaluators/README.md).
-
-
-## Announcement
-In our paper, the results of LPIPS reported in Table 1, are calculated by **1 – distance score**; 
-thereby, the larger is more similar between two images. The beginning intention of using **1 – distance score** is that it is more accurate to meet the definition of **Similarity** in LPIPS.
-
-However, most other papers use the original definition that LPIPS = distance score; 
-therefore, to eliminate the ambiguity and make it consistent with others, 
-we update the results in Table 1 with the original definition in the [latest paper](https://arxiv.org/pdf/1909.12224.pdf).
-
-## Citation
-![thunmbnail](assets/thumbnail.jpg)
-```
-@InProceedings{lwb2019,
-    title={Liquid Warping GAN: A Unified Framework for Human Motion Imitation, Appearance Transfer and Novel View Synthesis},
-    author={Wen Liu and Zhixin Piao, Min Jie, Wenhan Luo, Lin Ma and Shenghua Gao},
-    booktitle={The IEEE International Conference on Computer Vision (ICCV)},
-    year={2019}
-}
-```
