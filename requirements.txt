@@ -2,7 +2,7 @@ imageio==2.5.0
 tqdm==4.28.1
 setuptools==39.1.0
 numpy==1.14.5
-scipy==1.2.1
+scipy==1.10.0
 torch==1.2.0
 torchvision==0.4.0
 h5py==2.8.0
